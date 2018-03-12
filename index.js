@@ -15,7 +15,7 @@ const client = new Discord.Client();
 const uptime = new Discord.Client().uptime;
 
 client.on('ready',() => {
-  console.log('I\'m Online\nIt\'s Steven');
+  console.log('Hi, It\'s Steven!');
 });
 
 var streamingGame = {type: 1, name: "Steven Universe: Save the Light", url: "https://twitch.tv/jtrent238"}; // "Streaming"
