@@ -12,7 +12,9 @@ setInterval(() => {
 
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const uptime = new Discord.Client().uptime;
+const ShardingManager = new Discord.ShardingManager("shard.js", {name: "Steven Shards", stats: true, clusters: 2, shards: 4, debug: true});
+//const uptime = new Discord.Client().uptime;
+
 
 client.on('ready',() => {
   console.log('Hi, It\'s Steven!');
@@ -23,6 +25,21 @@ var streamingGame = {type: 1, name: "Steven Universe: Save the Light", url: "htt
 //       ex. "http://twitch.tv/channel"
 var quotes = ["quote1", "quote2", "quote3"]
 var episodes = ["S1E1 Gem Glow", "S1E2 Laser Light Cannon", "S1E3 Cheeseburger Backpack", "S1E4 Together Breakfast", "S1E5 Frybo", "S1E6 Cat Fingers", "S1E7 Bubble Buddies", "S1E8 Serious Steven", "S1E9 Tiger Millionaire", "S1E10 Steven's Lion", "S1E11 Arcade Mania", "S1E12 Giant Woman", "S1E13 So Many Birthdays", "S1E14 Lars and the Cool Kids", "S1E15 Onion Trade"] 
+
+// Create an event listener for new guild members
+client.on('guildMemberAdd', member => {
+  // Send the message to a designated channel on a server:
+  const channel = member.guild.channels.find('name', 'member-log');
+  // Do nothing if the channel wasn't found on this server
+  if (!channel) return;
+  // Send the message, mentioning the member
+  channel.send(`Welcome to the server, ${member}`);
+});
+
+// Create an event listener for new channels
+client.on('channelCreate', message => {
+  message.channel.sendMessage('I see a new channel has been created! <:NewRoseGem:422744912182902785>');
+});
 
 
 const prefix = '~';
@@ -41,6 +58,7 @@ client.on('message', message => {
     //message.channel.sendMessage('<:NewRoseGem:422744912182902785> stevenquote = Random quote from the show.');
     //message.channel.sendMessage('<:NewRoseGem:422744912182902785> stevenepisode = Random episode.');
     //message.channel.sendMessage('<:NewRoseGem:422744912182902785> stevengem = Shows what gem Steven is.');
+    //message.channel.sendMessage('<:NewRoseGem:422744912182902785> invitesteven = Generates a link to invite Steven to a server.');
     //message.channel.sendMessage('<:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785>');
     
   //}
@@ -48,7 +66,7 @@ client.on('message', message => {
   //Help Message
   if (message.content.startsWith(prefix + 'help')) {
     //message.channel.sendMessage('this is a help command for the bot.');
-    message.channel.sendMessage('<:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785>\n<:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> The prefix for the bot is `~` <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785>\n<:NewRoseGem:422744912182902785> info = Information about the bot.\n<:NewRoseGem:422744912182902785> help = Shows this message.\n<:NewRoseGem:422744912182902785> ping = pong\n<:NewRoseGem:422744912182902785> uptime = Gets the bots uptime.\n<:NewRoseGem:422744912182902785> stevenquote = Random quote from the show.\n<:NewRoseGem:422744912182902785> stevenepisode = Random episode.\n<:NewRoseGem:422744912182902785> stevengem = Shows what gem Steven is.\n<:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785>');
+    message.channel.sendMessage('<:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785>\n<:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> The prefix for the bot is `~` <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785>\n<:NewRoseGem:422744912182902785> info = Information about the bot.\n<:NewRoseGem:422744912182902785> help = Shows this message.\n<:NewRoseGem:422744912182902785> ping = pong\n<:NewRoseGem:422744912182902785> uptime = Gets the bots uptime.\n<:NewRoseGem:422744912182902785> stevenquote = Random quote from the show.\n<:NewRoseGem:422744912182902785> stevenepisode = Random episode.\n<:NewRoseGem:422744912182902785> stevengem = Shows what gem Steven is.\n<:NewRoseGem:422744912182902785> invitesteven = Generates a link to invite Steven to a server.\n<:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785>');
     
   }
 
@@ -60,12 +78,14 @@ client.on('message', message => {
   
   
   if (message.content.startsWith(prefix + 'ping')) {
-    message.channel.sendMessage('pong');
+    message.channel.sendMessage('pong!');
+    message.channel.sendMessage('The Ping is: ' + client.ping);
   }
+  
   
   //Gets the bots uptime
   if (message.content.startsWith(prefix + 'uptime')) {
-    message.channel.sendMessage('I have been online for: ' + uptime);
+    message.channel.sendMessage('I have been online for: ' + client.uptime + 'Milliseconds');
   }
   
   //Get a random quote
@@ -82,6 +102,16 @@ client.on('message', message => {
   if (message.content.startsWith(prefix + 'stevengem')) {
     message.channel.sendMessage('My Gem is: <:NewRoseGem:422744912182902785>, a Rose Quartz.');
   }
+  
+  //Generate invite link to invite Steven to a server
+  if (message.content.startsWith(prefix + 'invitesteven')) {
+    message.channel.sendMessage('Invite me with: ' + client.generateInvite(['ADMINISTRATOR']));
+  }
+  
+  //Generate invite link to invite Steven to a server
+  //if (message.content.startsWith(prefix + 'invitesteven')) {
+    //message.channel.sendMessage('Invite me with: ' + client.generateInvite(['ADMINISTRATOR', 'CREATE_INSTANT_INVITE', 'KICK_MEMBERS', 'BAN_MEMBERS', 'MANAGE_CHANNELS', 'MANAGE_GUILD', 'ADD_REACTIONS', 'VIEW_AUDIT_LOG', 'VIEW_CHANNEL', 'READ_MESSAGES', 'SEND_MESSAGES', 'SEND_TTS_MESSAGES', 'MANAGE_MESSAGES', 'EMBED_LINKS', 'ATTACH_FILES', 'READ_MESSAGE_HISTORY', 'MENTION_EVERYONE', 'USE_EXTERNAL_EMOJIS', 'EXTERNAL_EMOJIS', 'CONNECT', 'SPEAK', 'MUTE_MEMBERS', 'DEAFEN_MEMBERS', 'MOVE_MEMBERS', 'USE_VAD', 'CHANGE_NICKNAME', 'MANAGE_NICKNAMES', 'MANAGE_ROLES', 'MANAGE_ROLES_OR_PERMISSIONS', 'MANAGE_WEBHOOKS', 'MANAGE_EMOJIS']));
+  //}
   
   //Steven Loves Cookie Cat
   if (message.content.startsWith('Cookie Cat')) {
