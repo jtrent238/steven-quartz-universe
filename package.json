@@ -1,5 +1,5 @@
 {
-  "name": "super-basic-bot",
+  "name": "steven-quartz-universe",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -12,15 +12,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/YorkAARGH/SuperbasicBot.git"
+    "url": "git+https://github.com/jtrent238/steven-quartz-universe.git"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/YorkAARGH/SuperbasicBot/issues"
+    "url": "https://github.com/jtrent238/steven-quartz-universeissues"
   },
-  "homepage": "https://github.com/YorkAARGH/SuperbasicBot#readme",
+  "homepage": "https://github.com/jtrent238/steven-quartz-universe#readme",
   "dependencies": {
     "discord.js": "^11.2.1",
     "express": "^4.16.2"
