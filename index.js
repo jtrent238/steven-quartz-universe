@@ -11,8 +11,8 @@ setInterval(() => {
 }, 280000);
 
 const Discord = require('discord.js');
+//const discordjs = require('discord.js-music');
 const client = new Discord.Client();
-const music = require('discord.js-music-v11');
 const Bot = new Discord.Client();
 const ShardingManager = new Discord.ShardingManager("shard.js", {name: "Steven Shards", stats: true, clusters: 2, shards: 4, debug: true});
 //const uptime = new Discord.Client().uptime;
@@ -30,25 +30,15 @@ var quotes = ["quote1", "quote2", "quote3"]
 var gems = [""]
 var episodes = ["S1E1 Gem Glow", "S1E2 Laser Light Cannon", "S1E3 Cheeseburger Backpack", "S1E4 Together Breakfast", "S1E5 Frybo", "S1E6 Cat Fingers", "S1E7 Bubble Buddies", "S1E8 Serious Steven", "S1E9 Tiger Millionaire", "S1E10 Steven's Lion", "S1E11 Arcade Mania", "S1E12 Giant Woman", "S1E13 So Many Birthdays", "S1E14 Lars and the Cool Kids", "S1E15 Onion Trade", "S1E16 Steven the Sword Fighter", "S1E17 Lion 2: The Movie", "S1E18 Beach Party", "S1E19 Rose's Room", "S1E20 Coach Steven", "S1E21 Joking Victim", "S1E22 Steven and the Stevens", "S1E23 Monster Buddies", "S1E24 An Indirect Kiss", "S1E25 Mirror Gem", "S1E26 Ocean Gem", "S1E27 House Guest", "S1E28 Space Race", "S1E29 Secret Team", "S1E30 Island Adventure"] 
 
-music(Bot, {
-	prefix: prefix,        // Prefix of '~'.
-	global: false,      // Server-specific queues.
-	maxQueueSize: 10,   // Maximum queue size of 10.
-	clearInvoker: false, // If permissions applicable, allow the bot to delete the messages that invoke it (start with prefix)
-    channel: 'music'    // Name of voice channel to join. If omitted, will instead join user's voice channel.
-});
+var bot = require("discord-music-bot");
+var serverName = client.getservername;
+var textChannelName = "music";
+var voiceChannelName = "Ymusic";
+var aliasesFile = "A file the bot will use to store your aliases";
+var botToken = process.env.TOKEN;
 
-/*
- * @param {Client} client - The discord.js client.
- * @param {object} options - (Optional) Options to configure the music bot. Acceptable options are:
- * 		prefix: The prefix to use for the commands (default '!').
- * 		global: Whether to use a global queue instead of a server-specific queue (default false).
- * 		maxQueueSize: The maximum queue size (default 20).
- * 		anyoneCanSkip: Allow anybody to skip the song.
- * 		clearInvoker: Clear the command message.
- * 		volume: The default volume of the player.
- *      channel: Name of voice channel to join. If omitted, will instead join user's voice channel.
- */
+bot.run(serverName, textChannelName, voiceChannelName, aliasesFile, botToken);
+bot.setYoutubeKey(process.env.YTAPIKEY);
 
 	/**
 	 * Checks if a user is an admin.
@@ -176,6 +166,10 @@ client.on('message', message => {
     message.channel.send("", {file: "https://cdn.glitch.com/3b971df8-c1b8-4b3d-8b2c-749c9e197d77%2FSteven_Universe_logo.svg.png"});
   }
   
+      //Sends a image of the Steven Universe Logo
+  if (message.content.startsWith(prefix + 'musicstart')) {
+    //return message.guild.playlist.start(message.member.voiceChannel);
+  }
   
   //In the case of an error send this message
   //if (message.content.startsWith('')) {
