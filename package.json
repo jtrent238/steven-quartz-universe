@@ -23,7 +23,6 @@
   "homepage": "https://github.com/jtrent238/steven-quartz-universe#readme",
   "dependencies": {
     "discord.js": "^11.3.2",
-    "express": "^4.16.3",
-    "discord-music-bot": "^2.3.0"
+    "express": "^4.16.3"
   }
 }
