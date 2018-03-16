@@ -45,7 +45,7 @@ var episodes = ["S1E1 Gem Glow", "S1E2 Laser Light Cannon", "S1E3 Cheeseburger B
 // Create an event listener for new guild members
 client.on('guildMemberAdd', member => {
   // Send the message to a designated channel on a server:
-  const channel = member.guild.channels.find('name', 'member-log');
+  const channel = member.guild.channels.find('name', 'member-log', 'public', 'general');
   // Do nothing if the channel wasn't found on this server
   if (!channel) return;
   // Send the message, mentioning the member
@@ -157,9 +157,12 @@ client.on('message', message => {
     message.channel.send("", {file: "https://cdn.glitch.com/3b971df8-c1b8-4b3d-8b2c-749c9e197d77%2FSteven_Universe_logo.svg.png"});
   }
   
-      //Sends a image of the Steven Universe Logo
-  if (message.content.startsWith(prefix + 'musicstart')) {
-    //return message.guild.playlist.start(message.member.voiceChannel);
+  //Bump the other bots (Specicaly for jtrent238 server)
+  if (message.content.startsWith(prefix + 'bump')) {
+    message.channel.sendMessage('=bump');
+    message.channel.sendMessage(';;bump');
+    message.channel.sendMessage('dlm!bump');
+    message.channel.sendMessage('dc!bump');
   }
   
   //In the case of an error send this message
