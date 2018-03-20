@@ -1,0 +1,28 @@
+{
+  "name": "steven-quartz-universe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": "8.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jtrent238/steven-quartz-universe.git"
+  },
+  "keywords": [],
+  "author": "jtrent238",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jtrent238/steven-quartz-universe/issues"
+  },
+  "homepage": "https://github.com/jtrent238/steven-quartz-universe#readme",
+  "dependencies": {
+    "discord.js": "^11.3.2",
+    "express": "^4.16.3"
+  }
+}
