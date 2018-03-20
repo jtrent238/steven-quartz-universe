@@ -14,6 +14,7 @@ const Discord = require('discord.js');
 //const discordjs = require('discord.js-music');
 const client = new Discord.Client();
 const Bot = new Discord.Client();
+//const Manager = new Discord.ShardingManager('./index.js');
 const ShardingManager = new Discord.ShardingManager("shard.js", {name: "Steven Shards", stats: true, clusters: 2, shards: 4, debug: true});
 //const uptime = new Discord.Client().uptime;
 const prefix = '~';
@@ -79,6 +80,7 @@ client.on('message', message => {
     //message.channel.sendMessage('<:NewRoseGem:422744912182902785> cookiecat = I Love Cookie Cat! <:cookiecat:423144575650103317>'); 
     //message.channel.sendMessage('<:NewRoseGem:422744912182902785> logo = Steven Universe Logo!.'); 
     //message.channel.sendMessage('<:NewRoseGem:422744912182902785> roll = I will roll a dice numbered 1-6.'); 
+    //message.channel.sendMessage('<:NewRoseGem:422744912182902785> servercount = How many servers am I in?'); 
     //message.channel.sendMessage('<:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785>');
     
   //}
@@ -87,7 +89,7 @@ client.on('message', message => {
   if (message.content.startsWith(prefix + 'help')) {
     //message.channel.sendMessage('this is a help command for the bot.');
     message.channel.sendMessage('<:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785>\n<:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> The prefix for the bot is `' + prefix + '` <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785>\n<:NewRoseGem:422744912182902785> info = Information about the bot.\n<:NewRoseGem:422744912182902785> help = Shows this message.\n<:NewRoseGem:422744912182902785> ping = pong\n<:NewRoseGem:422744912182902785> uptime = Gets the bots uptime.\n<:NewRoseGem:422744912182902785> stevenquote = Random quote from the show.\n<:NewRoseGem:422744912182902785> stevenepisode = Random episode.\n<:NewRoseGem:422744912182902785> stevengem = Shows what gem Steven is.\n<:NewRoseGem:422744912182902785> invitesteven = Generates a link to invite Steven to a server.\n<:NewRoseGem:422744912182902785> github = Gives the bots Github link.\n<:NewRoseGem:422744912182902785> cookiecat = I Love Cookie Cat! <:cookiecat:423144575650103317>\n<:NewRoseGem:422744912182902785> logo = Steven Universe Logo!.');
-    message.channel.sendMessage('<:NewRoseGem:422744912182902785> roll = I will roll a dice numberd 1-6.\n<:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785>');
+    message.channel.sendMessage('<:NewRoseGem:422744912182902785> roll = I will roll a dice numberd 1-6.\n<:NewRoseGem:422744912182902785> servercount = How many servers am I in?\n<:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785>');
     
   }
 
@@ -95,6 +97,11 @@ client.on('message', message => {
   if (message.content.startsWith(prefix + 'info')) {
     message.channel.sendMessage('<:NewRoseGem:422744912182902785> Bot Version: ' + process.env.VERSION + ' <:NewRoseGem:422744912182902785>');
     message.channel.sendMessage('<:NewRoseGem:422744912182902785> Bot made by: ' + process.env.AUTHOR + ' <:NewRoseGem:422744912182902785>');
+  }
+  
+  //Server Count
+    if (message.content.startsWith(prefix + 'servercount')) {
+    message.channel.sendMessage('Im in: ' + client.servers + ' servers!');
   }
   
   
@@ -173,6 +180,17 @@ client.on('message', message => {
     message.channel.sendMessage('dc!bump');
   }
   
+  //Shutdown the bot
+  if (message.content.startsWith(prefix + 'shutdown')) {
+    if(message.member.id == 204669722094993417) {
+      console.log(`Yay, the author of the message has the role!`);
+      message.channel.sendMessage('Bye Bye! <:steven_neutral:422744915823558678>');
+      } 
+    else {
+      console.log(`Nope, noppers, nadda.`);
+      message.channel.sendMessage('Sorry Only jtrent238 can use this command');
+}
+  }
   //In the case of an error send this message
   //if (message.content.startsWith('')) {
   //  message.channel.sendMessage('There seems to have been an error processing your command! <:steven_neutral:422744915823558678>');
