@@ -171,6 +171,13 @@ client.on('message', message => {
     message.channel.send("Ohh! I rolled a: ", {file: dice[Math.floor(Math.random() * 5) + 0  ]});
   }
   
+    //Create Invite
+  /*
+  if (message.content.startsWith(prefix + 'createinvite')) {
+    client.createinvite(client.channel, 0, 0, true, true)
+    message.channel.send('Invite Created: ' + invite);
+  }
+  */
   
   //Bump the other bots (Specicaly for jtrent238 server)
   if (message.content.startsWith(prefix + 'bump')) {
@@ -185,6 +192,7 @@ client.on('message', message => {
     if(message.member.id == 204669722094993417) {
       console.log(`Yay, the author of the message has the role!`);
       message.channel.sendMessage('Bye Bye! <:steven_neutral:422744915823558678>');
+      client.logout;
       } 
     else {
       console.log(`Nope, noppers, nadda.`);
