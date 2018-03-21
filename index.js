@@ -11,7 +11,10 @@ setInterval(() => {
 }, 280000);
 
 var Raven = require('raven');
-Raven.config('https://16a411477217428c877a6250da068c20@sentry.io/363976').install()
+Raven.config(process.env.DSN_PUBLIC).install()
+Raven.config(process.env.DSN_PUBLIC, {
+  release: '0e4fdef81448dcfa0e16ecc4433ff3997aa53572'
+});
 
 const Discord = require('discord.js');
 //const discordjs = require('discord.js-music');
