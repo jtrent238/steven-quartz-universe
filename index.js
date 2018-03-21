@@ -10,6 +10,9 @@ setInterval(() => {
   http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
 }, 280000);
 
+var Raven = require('raven');
+Raven.config('https://16a411477217428c877a6250da068c20@sentry.io/363976').install()
+
 const Discord = require('discord.js');
 //const discordjs = require('discord.js-music');
 const client = new Discord.Client();
@@ -39,11 +42,15 @@ var coin = ["https://cdn.glitch.com/3b971df8-c1b8-4b3d-8b2c-749c9e197d77%2F1200p
 	 * @param {GuildMember} member - The guild member
 	 * @returns {boolean} -
 	 */
-	function isAdmin(member) {
+	try {
+  function isAdmin(member) {
 		return member.hasPermission("ADMINISTRATOR");
 	}
+    } catch (e) {
+    Raven.captureException(e);
+    }
 
-
+try{
 // Create an event listener for new guild members
 client.on('guildMemberAdd', member => {
   // Send the message to a designated channel on a server:
@@ -53,14 +60,19 @@ client.on('guildMemberAdd', member => {
   // Send the message, mentioning the member
   channel.send(`Welcome to the server, ${member}`);
 });
-
+} catch (e) {
+    Raven.captureException(e);
+}
+try{
 // Create an event listener for new channels
 client.on('channelCreate', message => {
   message.channel.sendMessage('I see a new channel has been created! <:NewRoseGem:422744912182902785>');
 });
+} catch (e) {
+    Raven.captureException(e);
+}
 
-
-
+try{
 client.on('message', message => {
   if (message.author === client.user) return;
   
@@ -207,11 +219,28 @@ client.on('message', message => {
       message.channel.sendMessage('Sorry Only jtrent238 can use this command');
 }
   }
+  
+  //join a voice channel
+  if (message.content.startsWith(prefix + 'vc')) {
+    var voiceChannel = message.member.voiceChannel;
+    voiceChannel.join().then(connection =>{
+      const dispatcher = connection.playFile('./audiofile.mp3');
+      dispatcher.on("end", end => {voiceChannel.leave();});}).catch(err => console.log(err));
+    
+    message.channel.sendMessage('Joined :' + message.member.voiceChannel);
+  }
+  
   //In the case of an error send this message
   //if (message.content.startsWith('')) {
   //  message.channel.sendMessage('There seems to have been an error processing your command! <:steven_neutral:422744915823558678>');
   //}
   
 });
-
+} catch (e) {
+    Raven.captureException(e);
+}
+try{
 client.login(process.env.TOKEN);
+  } catch (e) {
+    Raven.captureException(e);
+  }
