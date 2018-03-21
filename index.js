@@ -13,7 +13,7 @@ setInterval(() => {
 var Raven = require('raven');
 Raven.config(process.env.DSN_PUBLIC).install()
 Raven.config(process.env.DSN_PUBLIC, {
-  release: '0e4fdef81448dcfa0e16ecc4433ff3997aa53572'
+  release: process.env.SENTRY_VERSION
 });
 
 const Discord = require('discord.js');
@@ -99,6 +99,7 @@ client.on('message', message => {
     //message.channel.sendMessage('<:NewRoseGem:422744912182902785> coin = I will flip a coin!'); 
     //message.channel.sendMessage('<:NewRoseGem:422744912182902785> servercount = How many servers am I in?'); 
     //message.channel.sendMessage('<:NewRoseGem:422744912182902785> today = Todays Date!'); 
+    //message.channel.sendMessage('<:NewRoseGem:422744912182902785> patreon = It's My Patreon'); 
     //message.channel.sendMessage('<:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785>');
     
   //}
@@ -107,14 +108,13 @@ client.on('message', message => {
   if (message.content.startsWith(prefix + 'help')) {
     //message.channel.sendMessage('this is a help command for the bot.');
     message.channel.sendMessage('<:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785>\n<:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> The prefix for the bot is `' + prefix + '` <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785>\n<:NewRoseGem:422744912182902785> info = Information about the bot.\n<:NewRoseGem:422744912182902785> help = Shows this message.\n<:NewRoseGem:422744912182902785> ping = pong\n<:NewRoseGem:422744912182902785> uptime = Gets the bots uptime.\n<:NewRoseGem:422744912182902785> stevenquote = Random quote from the show.\n<:NewRoseGem:422744912182902785> stevenepisode = Random episode.\n<:NewRoseGem:422744912182902785> stevengem = Shows what gem Steven is.\n<:NewRoseGem:422744912182902785> invitesteven = Generates a link to invite Steven to a server.\n<:NewRoseGem:422744912182902785> github = Gives the bots Github link.\n<:NewRoseGem:422744912182902785> cookiecat = I Love Cookie Cat! <:cookiecat:423144575650103317>\n<:NewRoseGem:422744912182902785> logo = Steven Universe Logo!.');
-    message.channel.sendMessage('<:NewRoseGem:422744912182902785> roll = I will roll a dice numberd 1-6.\n<:NewRoseGem:422744912182902785> servercount = How many servers am I in?\n<:NewRoseGem:422744912182902785> coin = I will flip a coin!\n<:NewRoseGem:422744912182902785> today = Todays Date!\n<:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785>');
+    message.channel.sendMessage('<:NewRoseGem:422744912182902785> roll = I will roll a dice numberd 1-6.\n<:NewRoseGem:422744912182902785> servercount = How many servers am I in?\n<:NewRoseGem:422744912182902785> coin = I will flip a coin!\n<:NewRoseGem:422744912182902785> today = Todays Date!\n<:NewRoseGem:422744912182902785> patreon = It\'\s My Patreon\n<:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785>');
     
   }
 
   //Information about the bot.
   if (message.content.startsWith(prefix + 'info')) {
-    message.channel.sendMessage('<:NewRoseGem:422744912182902785> Bot Version: ' + process.env.VERSION + ' <:NewRoseGem:422744912182902785>');
-    message.channel.sendMessage('<:NewRoseGem:422744912182902785> Bot made by: ' + process.env.AUTHOR + ' <:NewRoseGem:422744912182902785>');
+    message.channel.sendMessage('<:NewRoseGem:422744912182902785> Bot Version: ' + process.env.VERSION + ' ' + '(' + '_*' + process.env.SENTRY_VERSION + '*_' + ')' + '<:NewRoseGem:422744912182902785> \n<:NewRoseGem:422744912182902785> Bot made by: ' + process.env.AUTHOR + ' <:NewRoseGem:422744912182902785>');
   }
   
   //Server Count
@@ -210,15 +210,16 @@ client.on('message', message => {
     message.channel.sendMessage('dc!bump');
   }
   
-  //Shutdown the bot
+  //Shutdown the bot (jtrent238 ONLY Command!)
   if (message.content.startsWith(prefix + 'shutdown')) {
     if(message.member.id == 204669722094993417) {
-      console.log(`Yay, the author of the message has the role!`);
+      console.log(`Yay, its jtrent238!`);
       message.channel.sendMessage('Bye Bye! <:steven_neutral:422744915823558678>');
-      client.logout;
+      client.logOut((err) => {
+        console.log(err);});
       } 
     else {
-      console.log(`Nope, noppers, nadda.`);
+      console.log(`Nope, noppers, nadda. (NOT jtrent238)`);
       message.channel.sendMessage('Sorry Only jtrent238 can use this command');
 }
   }
@@ -237,6 +238,24 @@ client.on('message', message => {
   if (message.content.startsWith(prefix + 'today')) {
     message.channel.sendMessage('Today is: ' + new Date());
   }
+  
+  //jtrent238's Patreon
+  if (message.content.startsWith(prefix + 'patreon')) {
+    message.channel.sendMessage('<:patreon_logo:388799943437058059> My Patreon is: https://www.patreon.com/jtrent238 <:patreon_logo:388799943437058059>\n Do `patreon!supporters` to see my supporters!');
+  }
+  
+  //List Patreon Supportors
+  if (message.content.startsWith('patreon!supporters')) {
+    message.channel.sendMessage('<:patreon_logo:388799943437058059> <:patreon_logo:388799943437058059> <:patreon_logo:388799943437058059> My Patreon supporters! <:patreon_logo:388799943437058059> <:patreon_logo:388799943437058059> <:patreon_logo:388799943437058059>\n <:patreon_logo:388799943437058059> I have none! <:steven_neutral:422744915823558678>');
+  }
+  
+  //Gets a player's Minecraft skin.
+      /*
+  if (message.content.startsWith(prefix + 'mcskin' + mcname)) {
+    //var mcname = "jtrent238";//jtrent238's username as a test
+    message.channel.send(mcname + "'s Skin", {file: 'https://crafatar.com/renders/body/' + mcname});
+  }
+      */
   
   //In the case of an error send this message
   //if (message.content.startsWith('')) {
