@@ -26,6 +26,7 @@
     "express": "^4.16.3",
     "raven-js": "^3.23.3",
     "raven": "^2.4.2",
-    "spotify-web-api-js": "^0.23.0"
+    "spotify-web-api-js": "^0.23.0",
+    "spotify": "^0.3.0"
   }
 }
