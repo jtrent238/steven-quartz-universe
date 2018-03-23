@@ -34,6 +34,7 @@ client.on('ready',() => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
+
 var streamingGame = {type: 1, name: "Steven Universe: Save the Light", url: "https://twitch.tv/jtrent238"}; // "Streaming"
 // note: streaming status requires a valid twitch url:
 //       ex. "http://twitch.tv/channel"
@@ -104,6 +105,8 @@ client.on('message', message => {
     //message.channel.sendMessage('<:NewRoseGem:422744912182902785> servercount = How many servers am I in?'); 
     //message.channel.sendMessage('<:NewRoseGem:422744912182902785> today = Todays Date!'); 
     //message.channel.sendMessage('<:NewRoseGem:422744912182902785> patreon = It's My Patreon'); 
+    //message.channel.sendMessage('<:NewRoseGem:422744912182902785> echo = I repeat what ever you say. Echoooo!!!'); 
+    //message.channel.sendMessage('<:NewRoseGem:422744912182902785> nsfw = You know what this is! Right?'); 
     //message.channel.sendMessage('<:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785>');
     
   //}
@@ -111,8 +114,8 @@ client.on('message', message => {
   //Help Message
   if (message.content.startsWith(prefix + 'help')) {
     //message.channel.sendMessage('this is a help command for the bot.');
-    message.channel.sendMessage('<:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785>\n<:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> The prefix for the bot is `' + prefix + '` <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785>\n<:NewRoseGem:422744912182902785> info = Information about the bot.\n<:NewRoseGem:422744912182902785> help = Shows this message.\n<:NewRoseGem:422744912182902785> ping = pong\n<:NewRoseGem:422744912182902785> uptime = Gets the bots uptime.\n<:NewRoseGem:422744912182902785> stevenquote = Random quote from the show.\n<:NewRoseGem:422744912182902785> stevenepisode = Random episode.\n<:NewRoseGem:422744912182902785> stevengem = Shows what gem Steven is.\n<:NewRoseGem:422744912182902785> invitesteven = Generates a link to invite Steven to a server.\n<:NewRoseGem:422744912182902785> github = Gives the bots Github link.\n<:NewRoseGem:422744912182902785> cookiecat = I Love Cookie Cat! <:cookiecat:423144575650103317>\n<:NewRoseGem:422744912182902785> logo = Steven Universe Logo!.');
-    message.channel.sendMessage('<:NewRoseGem:422744912182902785> roll = I will roll a dice numberd 1-6.\n<:NewRoseGem:422744912182902785> servercount = How many servers am I in?\n<:NewRoseGem:422744912182902785> coin = I will flip a coin!\n<:NewRoseGem:422744912182902785> today = Todays Date!\n<:NewRoseGem:422744912182902785> patreon = It\'\s My Patreon\n<:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785>');
+    message.channel.sendMessage('<:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785>\n<:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> The prefix for the bot is `' + prefix + '` <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785>\n<:NewRoseGem:422744912182902785> info = Information about the bot. :exclamation: \n<:NewRoseGem:422744912182902785> help = Shows this message. :question: \n<:NewRoseGem:422744912182902785> ping = pong\n<:NewRoseGem:422744912182902785> uptime = Gets the bots uptime.\n<:NewRoseGem:422744912182902785> stevenquote = Random quote from the show.\n<:NewRoseGem:422744912182902785> stevenepisode = Random episode.\n<:NewRoseGem:422744912182902785> stevengem = Shows what gem Steven is. <:NewRoseGem:422744912182902785>\n<:NewRoseGem:422744912182902785> invitesteven = Generates a link to invite Steven to a server.\n<:NewRoseGem:422744912182902785> github = Gives the bots Github link. <:github:401011847538671627>\n<:NewRoseGem:422744912182902785> cookiecat = I Love Cookie Cat! <:cookiecat:423144575650103317>\n<:NewRoseGem:422744912182902785> logo = Steven Universe Logo!.');
+    message.channel.sendMessage('<:NewRoseGem:422744912182902785> roll = I will roll a dice numberd 1-6. :game_die: \n<:NewRoseGem:422744912182902785> servercount = How many servers am I in?\n<:NewRoseGem:422744912182902785> coin = I will flip a coin! :coin: \n<:NewRoseGem:422744912182902785> today = Todays Date!\n<:NewRoseGem:422744912182902785> patreon = It\'\s My Patreon! <:patreon_logo:388799943437058059>\n<:NewRoseGem:422744912182902785> echo = I repeat what ever you say. Echoooo!!!\n<:NewRoseGem:422744912182902785> nsfw = You know what this is! Right?\n<:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785>');
     
   }
 
@@ -219,9 +222,11 @@ client.on('message', message => {
     if(message.member.id == 204669722094993417) {
       console.log(`Yay, its jtrent238!`);
       message.channel.sendMessage('Bye Bye! <:steven_neutral:422744915823558678>');
+      client.logout;
+      Discord.logout;
       client.logOut((err) => {
         console.log(err);});
-      } 
+      }
     else {
       console.log(`Nope, noppers, nadda. (NOT jtrent238)`);
       message.channel.sendMessage('Sorry Only jtrent238 can use this command');
@@ -231,6 +236,7 @@ client.on('message', message => {
   //join a voice channel
   if (message.content.startsWith(prefix + 'vc')) {
     var voiceChannel = message.member.voiceChannel;
+    //client.joinVoiceChannel('241362869319499778');
     voiceChannel.join().then(connection =>{
       const dispatcher = connection.playFile('./audiofile.mp3');
       dispatcher.on("end", end => {voiceChannel.leave();});}).catch(err => console.log(err));
@@ -282,6 +288,15 @@ client.on('message', message => {
   }
       */
   
+  //Repeats what you say.
+  if (message.content.startsWith(prefix + 'echo' + '')) {
+    message.channel.sendMessage('' + message.content.text);
+  }
+  
+   //NSFW - You know what this is! Right?
+  if (message.content.startsWith(prefix + 'nsfw' + '')) {
+    message.channel.sendMessage('ERROR: This command is Disabled! <:steven_neutral:422744915823558678>');
+  }
   //In the case of an error send this message
   //if (message.content.startsWith('')) {
   //  message.channel.sendMessage('There seems to have been an error processing your command! <:steven_neutral:422744915823558678>');
