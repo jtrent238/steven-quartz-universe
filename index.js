@@ -47,7 +47,10 @@ const prefix = '~';
 
 client.on('ready',() => {
   console.log('Hi, It\'s Steven!');
-  console.log(`Logged in as ${client.user.tag}!`);
+  console.log(`Logged in as: ${client.user.tag}!`);
+  console.log(`Client Id: ${client.user.id}!`);
+  console.log(`Is client Verified?: ${client.user.verified}!`);
+  console.log(`Client Created on: ${client.user.createdAt}!`);
   //game(streamingGame);
 });
 
