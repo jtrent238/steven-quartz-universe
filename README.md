@@ -1,9 +1,12 @@
 # steven-quartz-universe
-A discord bot that does many things
+A discord bot that does many things, such as roll a dice and flip a coin.
 
-Want to invite the bot? [Click Here](https://discordapp.com/oauth2/authorize?&client_id=421786371183869952&scope=bot&permissions=3255296)
-Want to join my server? [Click Here](https://discord.gg/ndhwqfW)
-Want to join the bot's server? [Click Here](https://discord.gg/pkgVZtA)
+### Important Links
+- Want to invite the bot? [Click Here](https://discordapp.com/oauth2/authorize?&client_id=421786371183869952&scope=bot&permissions=3255296)
+
+- Want to join my server? [Click Here](https://discord.gg/ndhwqfW)
+
+- Want to join the bot's server? [Click Here](https://discord.gg/pkgVZtA)
 
 ### Commands
 The prefix for the bot is `~`
@@ -26,3 +29,4 @@ The prefix for the bot is `~`
 - `echo` = I repeat what ever you say. Echoooo!!!
 - `nsfw` = You know what this is! Right?
 - `srcarchivedl` = Sends an archive of the src code.
+- `randomgem` = Gets a random Gem!
