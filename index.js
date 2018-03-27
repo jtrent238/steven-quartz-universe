@@ -40,6 +40,7 @@ const Discord = require('discord.js');
 //const discordjs = require('discord.js-music');
 const client = new Discord.Client();
 const Bot = new Discord.Client();
+const hook = new Discord.WebhookClient('webhook id', process.env.WEBHOOK_TOKEN);
 //const Manager = new Discord.ShardingManager('./index.js');
 const ShardingManager = new Discord.ShardingManager("shard.js", {name: "Steven Shards", stats: true, clusters: 2, shards: 4, debug: true});
 //const uptime = new Discord.Client().uptime;
@@ -51,6 +52,7 @@ client.on('ready',() => {
   console.log(`Client Id: ${client.user.id}!`);
   console.log(`Is client Verified?: ${client.user.verified}!`);
   console.log(`Client Created on: ${client.user.createdAt}!`);
+  hook.send('I am now alive!');
   //game(streamingGame);
 });
 
@@ -64,7 +66,7 @@ var gems_img = ["https://cdn.glitch.com/3b971df8-c1b8-4b3d-8b2c-749c9e197d77%2FN
 var episodes = ["S1E1 Gem Glow", "S1E2 Laser Light Cannon", "S1E3 Cheeseburger Backpack", "S1E4 Together Breakfast", "S1E5 Frybo", "S1E6 Cat Fingers", "S1E7 Bubble Buddies", "S1E8 Serious Steven", "S1E9 Tiger Millionaire", "S1E10 Steven's Lion", "S1E11 Arcade Mania", "S1E12 Giant Woman", "S1E13 So Many Birthdays", "S1E14 Lars and the Cool Kids", "S1E15 Onion Trade", "S1E16 Steven the Sword Fighter", "S1E17 Lion 2: The Movie", "S1E18 Beach Party", "S1E19 Rose's Room", "S1E20 Coach Steven", "S1E21 Joking Victim", "S1E22 Steven and the Stevens", "S1E23 Monster Buddies", "S1E24 An Indirect Kiss", "S1E25 Mirror Gem", "S1E26 Ocean Gem", "S1E27 House Guest", "S1E28 Space Race", "S1E29 Secret Team", "S1E30 Island Adventure"] 
 var dice = ["https://cdn.glitch.com/3b971df8-c1b8-4b3d-8b2c-749c9e197d77%2F1_5i3bBsz_bMcGQ-UgDMCzQA.png", "https://cdn.glitch.com/3b971df8-c1b8-4b3d-8b2c-749c9e197d77%2F1_dqZhjZbsbEBDXzKQPAagXw.png", "https://cdn.glitch.com/3b971df8-c1b8-4b3d-8b2c-749c9e197d77%2F1_DrPdeWaJON0XbtmiEZc3jw.png", "https://cdn.glitch.com/3b971df8-c1b8-4b3d-8b2c-749c9e197d77%2F1_5w7bpE0KdwXc21zUQoOtOw.png", "https://cdn.glitch.com/3b971df8-c1b8-4b3d-8b2c-749c9e197d77%2F1_UYR8l1h7AI4MNtJWAugyjg.png", "https://cdn.glitch.com/3b971df8-c1b8-4b3d-8b2c-749c9e197d77%2F1_15_KIo9vPHULoA98NYT9jQ.png"]
 var coin = ["https://cdn.glitch.com/3b971df8-c1b8-4b3d-8b2c-749c9e197d77%2F1200px-1879S_Morgan_Dollar_NGC_MS67plus_Obverse.png", "https://cdn.glitch.com/3b971df8-c1b8-4b3d-8b2c-749c9e197d77%2F800px-1879S_Morgan_Dollar_NGC_MS67plus_Reverse.png"]
-
+var developerids = ["204669722094993417"]
 	/**
 	 * Checks if a user is an admin.
 	 *
@@ -135,6 +137,65 @@ client.on('message', message => {
     
   }
 
+   //Help Message [Developer Help]
+  if (message.content.startsWith(prefix + 'devhelp')) {
+    if(message.member.id == developerids) {
+      console.log(`Yay, its a Developer!`);
+    //message.channel.sendMessage('this is a help command for the bot.');
+    message.channel.sendMessage('<:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785>\n' + 
+                                '<:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> The prefix for the bot is `' + prefix + '` <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785>\n <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> _*Developer Commands!*_ <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> \n' +
+                                '<:NewRoseGem:422744912182902785> devinfo = Information about the bot. :exclamation: \n' + 
+                                '<:NewRoseGem:422744912182902785> devhelp = Shows this message. :question: \n' + 
+                                '<:NewRoseGem:422744912182902785> shutdown = Shutsdown the bot. :desktop: (ONLY jtrent238 can use this command) \n'
+                            )
+    message.channel.sendMessage('<:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785>')}
+    
+    else {
+      console.log(`Nope, noppers, nadda. (NOT a Developer!)`);
+      message.channel.sendMessage('Sorry Only a Developer can use this command');
+    }    
+  }
+  
+    //Information about the bot.
+  if (message.content.startsWith(prefix + 'info')) {
+    message.channel.sendMessage('<:NewRoseGem:422744912182902785> Bot Version: ' + process.env.VERSION + ' ' + '(' + '_*' + process.env.SENTRY_VERSION + '*_' + ')' + '<:NewRoseGem:422744912182902785> \n<:NewRoseGem:422744912182902785> Bot made by: ' + process.env.AUTHOR + ' <:NewRoseGem:422744912182902785>');
+  }
+  
+  //Information about the bot. [Developer Information]
+  if (message.content.startsWith(prefix + 'devinfo')) {
+    if(message.member.id == developerids) {
+      console.log(`Yay, its a Developer!`);
+      message.channel.sendMessage('<:NewRoseGem:422744912182902785> Bot Version: ' + process.env.VERSION + ' ' + '(' + '_*' + process.env.SENTRY_VERSION + '*_' + ')' + 
+                                  '<:NewRoseGem:422744912182902785> \n<:NewRoseGem:422744912182902785> Bot made by: ' + process.env.AUTHOR + ' <:NewRoseGem:422744912182902785>' + '\n <:NewRoseGem:422744912182902785>' + 
+                                  `Logged in as: ${client.user.tag}!` + '<:NewRoseGem:422744912182902785> \n <:NewRoseGem:422744912182902785>' + 
+                                  `Client Id: ${client.user.id}!` + '<:NewRoseGem:422744912182902785> \n <:NewRoseGem:422744912182902785>' + 
+                                  `Is client Verified?: ${client.user.verified}!` + '<:NewRoseGem:422744912182902785> \n <:NewRoseGem:422744912182902785>' + 
+                                  `Client Created on: ${client.user.createdAt}!` + '<:NewRoseGem:422744912182902785>');
+  console.log(`Logged in as: ${client.user.tag}!`);
+  console.log(`Client Id: ${client.user.id}!`);
+  console.log(`Is client Verified?: ${client.user.verified}!`);
+  console.log(`Client Created on: ${client.user.createdAt}!`);
+  
+    }
+    else {
+      console.log(`Nope, noppers, nadda. (NOT a Developer!)`);
+      message.channel.sendMessage('Sorry Only a Developer can use this command');
+}
+  }
+  
+  
+    //Information about the bot. [Developer Information]
+  if (message.content.startsWith(prefix + 'dd')) {
+    if(message.member.id == developerids) {
+      console.log(`Yay, its a Developer!`);
+      message.channel.sendMessage('');
+    }
+    else {
+      console.log(`Nope, noppers, nadda. (NOT a Developer!)`);
+      message.channel.sendMessage('Sorry Only a Developer can use this command');
+}
+  }
+  
   //Information about the bot.
   if (message.content.startsWith(prefix + 'info')) {
     message.channel.sendMessage('<:NewRoseGem:422744912182902785> Bot Version: ' + process.env.VERSION + ' ' + '(' + '_*' + process.env.SENTRY_VERSION + '*_' + ')' + '<:NewRoseGem:422744912182902785> \n<:NewRoseGem:422744912182902785> Bot made by: ' + process.env.AUTHOR + ' <:NewRoseGem:422744912182902785>');

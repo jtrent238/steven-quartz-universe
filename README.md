@@ -30,3 +30,9 @@ The prefix for the bot is `~`
 - `nsfw` = You know what this is! Right?
 - `srcarchivedl` = Sends an archive of the src code.
 - `randomgem` = Gets a random Gem!
+
+### Developer Commands
+
+- `devinfo` = Information about the bot. :exclamation: 
+- `devhelp` = Shows this message. :question: 
+- `shutdown` = Shutsdown the bot. :desktop: (ONLY jtrent238 can use this command)
