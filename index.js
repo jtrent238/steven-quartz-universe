@@ -345,6 +345,13 @@ client.on('message', message => {
     message.channel.sendMessage('' + message.content.text);
   }
   
+  //Logs command
+  if (message.content.startsWith(prefix + 'logs')) {
+    message.channel.fetchMessages({}).then(messages => {
+  console.log(`${messages.size} messages found`);
+  });
+  }
+  
    //NSFW - You know what this is! Right?
   if (message.content.startsWith(prefix + 'nsfw' + '')) {
     message.channel.sendMessage('ERROR: This command is Disabled! <:steven_neutral:422744915823558678>');

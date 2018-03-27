@@ -1,6 +1,10 @@
 # steven-quartz-universe
 A discord bot that does many things
 
+Want to invite the bot? [Click Here](https://discordapp.com/oauth2/authorize?&client_id=421786371183869952&scope=bot&permissions=3255296)
+Want to join my server? [Click Here](https://discord.gg/ndhwqfW)
+Want to join the bot's server? [Click Here](https://discord.gg/pkgVZtA)
+
 ### Commands
 The prefix for the bot is `~`
 - `info` = Information about the bot. :exclamation: 
