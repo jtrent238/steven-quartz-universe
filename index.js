@@ -60,12 +60,19 @@ client.on('ready',() => {
 var streamingGame = {type: 1, name: "Steven Universe: Save the Light", url: "https://twitch.tv/jtrent238"}; // "Streaming"
 // note: streaming status requires a valid twitch url:
 //       ex. "http://twitch.tv/channel"
+
 var quotes = ["quote1", "quote2", "quote3"]
+
 var gems = [""]
+
 var gems_img = ["https://cdn.glitch.com/3b971df8-c1b8-4b3d-8b2c-749c9e197d77%2FNewRoseGem.png", ""]
-var episodes = ["S1E1 Gem Glow", "S1E2 Laser Light Cannon", "S1E3 Cheeseburger Backpack", "S1E4 Together Breakfast", "S1E5 Frybo", "S1E6 Cat Fingers", "S1E7 Bubble Buddies", "S1E8 Serious Steven", "S1E9 Tiger Millionaire", "S1E10 Steven's Lion", "S1E11 Arcade Mania", "S1E12 Giant Woman", "S1E13 So Many Birthdays", "S1E14 Lars and the Cool Kids", "S1E15 Onion Trade", "S1E16 Steven the Sword Fighter", "S1E17 Lion 2: The Movie", "S1E18 Beach Party", "S1E19 Rose's Room", "S1E20 Coach Steven", "S1E21 Joking Victim", "S1E22 Steven and the Stevens", "S1E23 Monster Buddies", "S1E24 An Indirect Kiss", "S1E25 Mirror Gem", "S1E26 Ocean Gem", "S1E27 House Guest", "S1E28 Space Race", "S1E29 Secret Team", "S1E30 Island Adventure"] 
+
+var episodes = ["S1E1 Gem Glow", "S1E2 Laser Light Cannon", "S1E3 Cheeseburger Backpack", "S1E4 Together Breakfast", "S1E5 Frybo", "S1E6 Cat Fingers", "S1E7 Bubble Buddies", "S1E8 Serious Steven", "S1E9 Tiger Millionaire", "S1E10 Steven's Lion", "S1E11 Arcade Mania", "S1E12 Giant Woman", "S1E13 So Many Birthdays", "S1E14 Lars and the Cool Kids", "S1E15 Onion Trade", "S1E16 Steven the Sword Fighter", "S1E17 Lion 2: The Movie", "S1E18 Beach Party", "S1E19 Rose's Room", "S1E20 Coach Steven", "S1E21 Joking Victim", "S1E22 Steven and the Stevens", "S1E23 Monster Buddies", "S1E24 An Indirect Kiss", "S1E25 Mirror Gem", "S1E26 Ocean Gem", "S1E27 House Guest", "S1E28 Space Race", "S1E29 Secret Team", "S1E30 Island Adventure", "S1E31 Keep Beach City Weird", "S1E32 Fusion Cuisine", "S1E33 Garnet's Universe", "S1E34 Watermelon Steven", "S1E35 Lion 3: Straight to Video", "S1E36 Warp Tour", "S1E37 Alone Together", "S1E38 The Test", "S1E39 Future Vision", "S1E40 On the Run", "S1E41 Horror Club", "S1E42 Winter Forecast", "S1E43 Maximum Capacity", "S1E44 Marble Madness", "S1E45 Rose's Scabbard", "S1E46 Open Book", "S1E47 Shirt Club", "S1E48 Story for Steve", "S1E49 The Message", "S1E50 Political Power", "S1E51 The Return", "S1E52 Jail Break"] 
+
 var dice = ["https://cdn.glitch.com/3b971df8-c1b8-4b3d-8b2c-749c9e197d77%2F1_5i3bBsz_bMcGQ-UgDMCzQA.png", "https://cdn.glitch.com/3b971df8-c1b8-4b3d-8b2c-749c9e197d77%2F1_dqZhjZbsbEBDXzKQPAagXw.png", "https://cdn.glitch.com/3b971df8-c1b8-4b3d-8b2c-749c9e197d77%2F1_DrPdeWaJON0XbtmiEZc3jw.png", "https://cdn.glitch.com/3b971df8-c1b8-4b3d-8b2c-749c9e197d77%2F1_5w7bpE0KdwXc21zUQoOtOw.png", "https://cdn.glitch.com/3b971df8-c1b8-4b3d-8b2c-749c9e197d77%2F1_UYR8l1h7AI4MNtJWAugyjg.png", "https://cdn.glitch.com/3b971df8-c1b8-4b3d-8b2c-749c9e197d77%2F1_15_KIo9vPHULoA98NYT9jQ.png"]
+
 var coin = ["https://cdn.glitch.com/3b971df8-c1b8-4b3d-8b2c-749c9e197d77%2F1200px-1879S_Morgan_Dollar_NGC_MS67plus_Obverse.png", "https://cdn.glitch.com/3b971df8-c1b8-4b3d-8b2c-749c9e197d77%2F800px-1879S_Morgan_Dollar_NGC_MS67plus_Reverse.png"]
+
 var developerids = ["204669722094993417"]
 	/**
 	 * Checks if a user is an admin.
@@ -107,6 +114,10 @@ try{
 client.on('message', message => {
   if (message.author === client.user) return;
   
+  //if you mention the bot.
+  if (message.content.startsWith(client.user)) {
+    //message.channel.sendMessage('this is a help command for the bot.');
+    message.channel.sendMessage('<:NewRoseGem:422744912182902785> Use `~help` for a list of commands!');}
   
   //Help Message
   if (message.content.startsWith(prefix + 'help')) {
