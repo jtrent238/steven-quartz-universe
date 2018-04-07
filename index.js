@@ -36,6 +36,8 @@ var spotify = require('spotify');
 var spotifyApi = new SpotifyWebApi();
 spotifyApi.setAccessToken(process.env.SPOTIFYAPI);
 
+
+
 const Discord = require('discord.js');
 //const discordjs = require('discord.js-music');
 const client = new Discord.Client();
@@ -44,6 +46,8 @@ const hook = new Discord.WebhookClient('webhook id', process.env.WEBHOOK_TOKEN);
 //const Manager = new Discord.ShardingManager('./index.js');
 const ShardingManager = new Discord.ShardingManager("shard.js", {name: "Steven Shards", stats: true, clusters: 2, shards: 4, debug: true});
 //const uptime = new Discord.Client().uptime;
+const DBL = require("dblapi.js");
+const dbl = new DBL(process.env.DISCORD_BOTS_LIST_TOKEN, client);
 const prefix = '~';
 
 client.on('ready',() => {
@@ -214,7 +218,7 @@ client.on('message', message => {
   
   //Server Count
     if (message.content.startsWith(prefix + 'servercount')) {
-    message.channel.sendMessage('Im in: ' + client.servers + ' servers!');
+    message.channel.sendMessage('Im in: ' + client.guilds.size + ' servers!');
   }
   
   //Gets the bots ping
