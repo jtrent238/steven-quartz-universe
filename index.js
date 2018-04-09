@@ -118,6 +118,7 @@ client.on('channelCreate', message => {
 try{
 client.on('message', message => {
   if (message.author === client.user) return;
+  if(message.author.bot) return;
   
   //if you mention the bot.
   if (message.content.startsWith(client.user)) {
@@ -129,28 +130,28 @@ client.on('message', message => {
     //message.channel.sendMessage('this is a help command for the bot.');
     message.channel.sendMessage('<:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785>\n' + 
                                 '<:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> The prefix for the bot is `' + prefix + '` <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785>\n' +
-                                '<:NewRoseGem:422744912182902785> info = Information about the bot. :exclamation: \n' + 
-                                '<:NewRoseGem:422744912182902785> help = Shows this message. :question: \n' +
-                                '<:NewRoseGem:422744912182902785> ping = pong\n' +
-                                '<:NewRoseGem:422744912182902785> uptime = Gets the bots uptime.\n' +
-                                '<:NewRoseGem:422744912182902785> stevenquote = Random quote from the show.\n' +
-                                '<:NewRoseGem:422744912182902785> stevenepisode = Random episode.\n' +
-                                '<:NewRoseGem:422744912182902785> stevengem = Shows what gem Steven is. <:NewRoseGem:422744912182902785>\n' +
-                                '<:NewRoseGem:422744912182902785> invitesteven = Generates a link to invite Steven to a server.\n' + 
-                                '<:NewRoseGem:422744912182902785> github = Gives the bots Github link. <:github:401011847538671627>\n' +
-                                '<:NewRoseGem:422744912182902785> cookiecat = I Love Cookie Cat! <:cookiecat:423144575650103317>\n' +
-                                '<:NewRoseGem:422744912182902785> logo = Steven Universe Logo!.');
-    message.channel.sendMessage('<:NewRoseGem:422744912182902785> roll = I will roll a dice numberd 1-6. :game_die:\n' +
-                                '<:NewRoseGem:422744912182902785> servercount = How many servers am I in?\n' +
-                                '<:NewRoseGem:422744912182902785> coin = I will flip a coin! :coin:\n' + 
-                                '<:NewRoseGem:422744912182902785> today = Todays Date!\n' +
-                                '<:NewRoseGem:422744912182902785> patreon = It\'\s My Patreon! <:patreon_logo:388799943437058059>\n' + 
-                                '<:NewRoseGem:422744912182902785> echo = I repeat what ever you say. Echoooo!!!\n' +
-                                '<:NewRoseGem:422744912182902785> nsfw = You know what this is! Right?\n' +
-                                '<:NewRoseGem:422744912182902785> srcarchivedl = Sends an archive of the src code.\n' + 
-                                '<:NewRoseGem:422744912182902785> randomgem = Gets a random Gem! <:NewRoseGem:422744912182902785> \n' + 
-                                '<:NewRoseGem:422744912182902785> randomcat = Gets a random image of a cat! :cat: \n' +
-                                '<:NewRoseGem:422744912182902785> randomdog = Gets a random image of a dog! :dog: \n' +
+                                '<:NewRoseGem:422744912182902785> `info` = Information about the bot. :exclamation: \n' + 
+                                '<:NewRoseGem:422744912182902785> `help` = Shows this message. :question: \n' +
+                                '<:NewRoseGem:422744912182902785> `ping` = pong\n' +
+                                '<:NewRoseGem:422744912182902785> `uptime` = Gets the bots uptime.\n' +
+                                '<:NewRoseGem:422744912182902785> `stevenquote` = Random quote from the show.\n' +
+                                '<:NewRoseGem:422744912182902785> `stevenepisode` = Random episode.\n' +
+                                '<:NewRoseGem:422744912182902785> `stevengem` = Shows what gem Steven is. <:NewRoseGem:422744912182902785>\n' +
+                                '<:NewRoseGem:422744912182902785> `invitesteven` = Generates a link to invite Steven to a server.\n' + 
+                                '<:NewRoseGem:422744912182902785> `github` = Gives the bots Github link. <:github:401011847538671627>\n' +
+                                '<:NewRoseGem:422744912182902785> `cookiecat` = I Love Cookie Cat! <:cookiecat:423144575650103317>\n' +
+                                '<:NewRoseGem:422744912182902785> `logo` = Steven Universe Logo!.');
+    message.channel.sendMessage('<:NewRoseGem:422744912182902785> `roll` = I will roll a dice numberd 1-6. :game_die:\n' +
+                                '<:NewRoseGem:422744912182902785> `servercount` = How many servers am I in?\n' +
+                                '<:NewRoseGem:422744912182902785> `coin` = I will flip a coin! :coin:\n' + 
+                                '<:NewRoseGem:422744912182902785> `today` = Todays Date!\n' +
+                                '<:NewRoseGem:422744912182902785> `patreon` = It\'\s My Patreon! <:patreon_logo:388799943437058059>\n' + 
+                                '<:NewRoseGem:422744912182902785> `echo` = I repeat what ever you say. Echoooo!!!\n' +
+                                '<:NewRoseGem:422744912182902785> `nsfw` = You know what this is! Right?\n' +
+                                '<:NewRoseGem:422744912182902785> `srcarchivedl` = Sends an archive of the src code.\n' + 
+                                '<:NewRoseGem:422744912182902785> `randomgem` = Gets a random Gem! <:NewRoseGem:422744912182902785> \n' + 
+                                '<:NewRoseGem:422744912182902785> `randomcat` = Gets a random image of a cat! :cat: \n' +
+                                '<:NewRoseGem:422744912182902785> `randomdog` = Gets a random image of a dog! :dog: \n' +
                                 '<:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785>');
     
   }
@@ -162,9 +163,9 @@ client.on('message', message => {
     //message.channel.sendMessage('this is a help command for the bot.');
     message.channel.sendMessage('<:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785>\n' + 
                                 '<:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> The prefix for the bot is `' + prefix + '` <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785>\n <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> _*Developer Commands!*_ <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> \n' +
-                                '<:NewRoseGem:422744912182902785> devinfo = Information about the bot. :exclamation: \n' + 
-                                '<:NewRoseGem:422744912182902785> devhelp = Shows this message. :question: \n' + 
-                                '<:NewRoseGem:422744912182902785> shutdown = Shutsdown the bot. :desktop: (ONLY jtrent238 can use this command) \n'
+                                '<:NewRoseGem:422744912182902785> `devinfo` = Information about the bot. :exclamation: \n' + 
+                                '<:NewRoseGem:422744912182902785> `devhelp` = Shows this message. :question: \n' + 
+                                '<:NewRoseGem:422744912182902785> `shutdown` = Shutsdown the bot. :desktop: (ONLY jtrent238 can use this command) \n'
                             )
     message.channel.sendMessage('<:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785>')}
     
@@ -222,6 +223,11 @@ client.on('message', message => {
   //Server Count
     if (message.content.startsWith(prefix + 'servercount')) {
     message.channel.sendMessage('Im in: ' + client.guilds.size + ' servers!');
+  }
+    
+  //Server Count
+    if (message.content.startsWith(prefix + 'usercount')) {
+    message.channel.sendMessage('I have : ' + Discord.members.filter(m => m.presence.status === 'online') + ' users!');
   }
   
   //Gets the bots ping
