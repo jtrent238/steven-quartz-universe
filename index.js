@@ -35,8 +35,8 @@ var SpotifyWebApi = require('spotify-web-api-js');
 var spotify = require('spotify');
 var spotifyApi = new SpotifyWebApi();
 spotifyApi.setAccessToken(process.env.SPOTIFYAPI);
-
-
+//var FileReader = require('filereader'), fileReader = new FileReader();
+var request = require('request');
 
 const Discord = require('discord.js');
 //const discordjs = require('discord.js-music');
@@ -48,6 +48,7 @@ const ShardingManager = new Discord.ShardingManager("shard.js", {name: "Steven S
 //const uptime = new Discord.Client().uptime;
 const DBL = require("dblapi.js");
 const dbl = new DBL(process.env.DISCORD_BOTS_LIST_TOKEN, client);
+
 const prefix = '~';
 
 client.on('ready',() => {
@@ -148,6 +149,8 @@ client.on('message', message => {
                                 '<:NewRoseGem:422744912182902785> nsfw = You know what this is! Right?\n' +
                                 '<:NewRoseGem:422744912182902785> srcarchivedl = Sends an archive of the src code.\n' + 
                                 '<:NewRoseGem:422744912182902785> randomgem = Gets a random Gem! <:NewRoseGem:422744912182902785> \n' + 
+                                '<:NewRoseGem:422744912182902785> randomcat = Gets a random image of a cat! :cat: \n' +
+                                '<:NewRoseGem:422744912182902785> randomdog = Gets a random image of a dog! :dog: \n' +
                                 '<:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785>');
     
   }
@@ -298,6 +301,32 @@ client.on('message', message => {
     message.channel.send("", {file: gems_img[Math.floor(Math.random() * 1) + 0  ]});
   }
   
+
+  //Sends a image of a random cat
+  if (message.content.startsWith(prefix + 'randomcat')) {
+    message.channel.send("This command does not seem to be working! <:steven_neutral:422744915823558678>");
+    request('http:/random.cat/meow', function (error, response, body) {
+  if (!error && response.statusCode == 200) {
+     var importedJSON = JSON.parse(body);
+     console.log(body);
+        message.channel.send("Here is a random cat: ", {file: "http:/random.cat/meow/" + body});
+  }
+})
+    //message.channel.send("Here is a random cat: ", {file: body});
+  }
+  
+  //Sends a image of a random dog
+  if (message.content.startsWith(prefix + 'randomdog')) {
+    request('https://random.dog/woof', function (error, response, body) {
+  if (!error && response.statusCode == 200) {
+//     var importedJSON = JSON.parse(body);
+     console.log(body);
+        message.channel.send("Here is a random dog: ", {file: "https://random.dog/" + body});
+  }
+})
+    //message.channel.send("Here is a random cat: ", {file: body});
+    //message.channel.send("Here is a random dog: ", {file: FileReader("https://random.dog/woof")});
+  }
       /*
     //Flip a coin
   if (message.content.startsWith(prefix + 'coin2' + type)) {
@@ -409,6 +438,7 @@ client.on('message', message => {
   
   //Logs command
   if (message.content.startsWith(prefix + 'logs')) {
+    message.channel.sendMessage('This channel has: ' + message.channel.fetchMessages.size + ' messages')
     message.channel.fetchMessages({}).then(messages => {
   console.log(`${messages.size} messages found`);
   });

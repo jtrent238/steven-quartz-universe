@@ -30,6 +30,8 @@ The prefix for the bot is `~`
 - `nsfw` = You know what this is! Right?
 - `srcarchivedl` = Sends an archive of the src code.
 - `randomgem` = Gets a random Gem!
+- `randomcat` = Gets a random image of a cat! :cat:
+- `randomdog` = Gets a random image of a dog! :dog:
 
 ### Developer Commands
 
