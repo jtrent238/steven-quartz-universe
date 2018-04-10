@@ -50,6 +50,8 @@ const DBL = require("dblapi.js");
 const dbl = new DBL(process.env.DISCORD_BOTS_LIST_TOKEN, client);
 const dogFacts = require('dog-facts');
 const pandaFacts = require('panda-facts');
+
+
 //const penguinFacts = require('penguin-facts');
 
 const prefix = '~';
@@ -117,6 +119,20 @@ client.on('channelCreate', message => {
 } catch (e) {
     Raven.captureException(e);
 }
+try{
+  
+// Create an event listener for new guild members
+client.on('guildMemberAdd', member => {
+  // Send the message to a designated channel on a server:
+  const channel = member.guild.channels.find('name', 'member-log', 'bot-hell', 'bot-testing', 'jtrent238-test', 'welcome-log');
+  // Do nothing if the channel wasn't found on this server
+  //if (!channel) return;
+  // Send the message, mentioning the member
+  channel.send(`Welcome to the server, ${member}`);
+});
+} catch (e) {
+    Raven.captureException(e);
+}
 
 try{
 client.on('message', message => {
@@ -158,6 +174,7 @@ client.on('message', message => {
                                 '<:NewRoseGem:422744912182902785> `catfact` = Gets a random cat fact. :cat: \n' +
                                 '<:NewRoseGem:422744912182902785> `pandafact` = Gets a random panda fact. :panda: \n' +
                                 '<:NewRoseGem:422744912182902785> `penguinfact` = Gets a random penguin fact. :penguin: \n' +
+                                '<:NewRoseGem:422744912182902785> `myavatar` = Gets a image of your avatar. \n' +
                                 '<:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785>');
     
   }
@@ -238,7 +255,7 @@ client.on('message', message => {
   
   //Gets the bots ping
   if (message.content.startsWith(prefix + 'ping')) {
-    message.channel.sendMessage('pong!');
+    message.channel.sendMessage(':ping_pong: pong!');
     message.channel.sendMessage('The Ping is: ' + client.ping);
   }
   
@@ -367,10 +384,11 @@ client.on('message', message => {
   }
   
   //Sends a random penguin fact
+      /*
   if (message.content.startsWith(prefix + 'penguinfact')) {
         message.channel.send("Did you know? " + penguinFacts.random());
   }
-  
+      */
   
      //Tells you your Location
   if (message.content.startsWith(prefix + 'whereami')) {
@@ -429,18 +447,29 @@ client.on('message', message => {
   
   //join a voice channel
   if (message.content.startsWith(prefix + 'vc')) {
-    var voiceChannel = message.member.voiceChannel;
-    //client.joinVoiceChannel('241362869319499778');
-    voiceChannel.join().then(connection =>{
-      const dispatcher = connection.playFile('./audiofile.mp3');
-      dispatcher.on("end", end => {voiceChannel.leave();});}).catch(err => console.log(err));
+      
+    //  if (message.member.voiceChannel){
+    //    message.channel.sendMessage("Im already in a voice channel!")
+    //    }
+    //else{
+      const connection = message.member.voiceChannel.join();
+    //}
     
-    message.channel.sendMessage('Joined :' + message.member.voiceChannel);
+  }
+  
+  //join a voice channel
+  if (message.content.startsWith(prefix + 'vcleave')) {
+      const connection = message.member.voiceChannel.leave();
   }
   
   //Get todays Date
   if (message.content.startsWith(prefix + 'today')) {
     message.channel.sendMessage('Today is: ' + new Date());
+  }
+  
+    //Get the users avatar
+  if (message.content.startsWith(prefix + 'myavatar')) {
+   message.channel.send("Here ya go! " + message.author + " Its your avatar!", {file: message.author.avatarURL + ".png"});
   }
   
   //jtrent238's Patreon

@@ -35,6 +35,7 @@ The prefix for the bot is `~`
 - `catfact` = Gets a random cat fact. :cat:
 - `pandafact` = Gets a random panda fact. :panda:
 - `penguinfact` = Gets a random penguin fact. :penguin: 
+- `myavatar` = Gets a image of your avatar.
 
 ### Developer Commands
 

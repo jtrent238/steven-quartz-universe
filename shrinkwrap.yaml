@@ -3,6 +3,9 @@ dependencies:
   discord.js: 11.3.2
   dog-facts: 1.0.3
   express: 4.16.3
+  ffmpeg-binaries: 3.2.2
+  node-opus: 0.2.7
+  opusscript: 0.0.6
   panda-facts: 1.0.3
   penguin-facts: 1.0.1
   raven: 2.4.2
@@ -66,6 +69,15 @@ packages:
     optional: true
     resolution:
       integrity: sha1-Y7xdy2EzG5K8Bf1SiVPDNGKgb40=
+  /bindings/1.2.1:
+    dev: false
+    resolution:
+      integrity: sha1-FK1hE4EtLTfXLme0ystLtyZQXxE=
+  /bindings/1.3.0:
+    dev: false
+    optional: true
+    resolution:
+      integrity: sha512-DpLh5EzMR2kzvX1KIlVC0VkC3iZtHKTgdtZ0a3pglBZdaQFjt5S9g9xd1lE+YvXyfd6mtCeRnrUfOLYiTMlNSw==
   /body-parser/1.18.2:
     dependencies:
       bytes: 3.0.0
@@ -128,6 +140,10 @@ packages:
       node: '>= 0.8'
     resolution:
       integrity: sha1-cj599ugBrFYTETp+RFqbactjKBg=
+  /commander/2.15.1:
+    dev: false
+    resolution:
+      integrity: sha512-VlfT9F3V0v+jr4yxPc5gg9s62/fIVWsd2Bk2iD435um1NlGMYdVCq+MjcXnhYq2icNOizHr1kK+5TI6H0Hy0ag==
   /content-disposition/0.5.2:
     dev: false
     engines:
@@ -322,6 +338,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-1RQsDK7msRifh9OnYREGT4bIu/I=
+  /ffmpeg-binaries/3.2.2:
+    dev: false
+    resolution:
+      integrity: sha1-Nw8wIO9rTbpipVGkJcY01sdaOiE=
   /finalhandler/1.1.1:
     dependencies:
       debug: 2.6.9
@@ -528,16 +548,39 @@ packages:
     dev: false
     resolution:
       integrity: sha1-VgiurfwAvmwpAd9fmGF4jeDVl8g=
+  /nan/2.10.0:
+    dev: false
+    resolution:
+      integrity: sha512-bAdJv7fBLhWC+/Bls0Oza+mvTaNQtP+1RyhhhvD95pgUJz6XM5IzgmxOkItJ9tkoCiplvAnXI1tNmmUD/eScyA==
   /negotiator/0.6.1:
     dev: false
     engines:
       node: '>= 0.6'
     resolution:
       integrity: sha1-KzJxhOiZIQEXeyhWP7XnECrNDKk=
+  /node-opus/0.2.7:
+    dependencies:
+      bindings: 1.2.1
+      commander: 2.15.1
+      nan: 2.10.0
+    dev: false
+    engines:
+      node: '>=0.10.0'
+    optionalDependencies:
+      ogg-packet: 1.0.0
+    resolution:
+      integrity: sha1-W3JuKXlbCxJ7TIfmYtTegWhAV5w=
   /oauth-sign/0.8.2:
     dev: false
     resolution:
       integrity: sha1-Rqarfwrq2N6unsBWV4C31O/rnUM=
+  /ogg-packet/1.0.0:
+    dependencies:
+      ref-struct: 1.1.0
+    dev: false
+    optional: true
+    resolution:
+      integrity: sha1-RbiFchrI991c8iOR1CEGrlM6xng=
   /on-finished/2.3.0:
     dependencies:
       ee-first: 1.1.1
@@ -546,6 +589,10 @@ packages:
       node: '>= 0.8'
     resolution:
       integrity: sha1-IPEzZIGwg811M3mSoWlxqi2QaUc=
+  /opusscript/0.0.6:
+    dev: false
+    resolution:
+      integrity: sha512-F7nx1SWZCD5Rq2W+5Fx39HlkRkz/5Zqt0LglEB9uHexk8HjedDEiM+u/Y2rBfDFcS/0uQIWu2lJhw+Gjsta+cA==
   /panda-facts/1.0.3:
     dependencies:
       unique-random-array: 1.0.1
@@ -628,6 +675,23 @@ packages:
       node: '>= 0.8'
     resolution:
       integrity: sha1-vNYMd9Prk83gBQKVw/N5OJvIj4k=
+  /ref-struct/1.1.0:
+    dependencies:
+      debug: 2.6.9
+      ref: 1.3.5
+    dev: false
+    optional: true
+    resolution:
+      integrity: sha1-XV7mWtQc78Olxf60BYcmHkee3BM=
+  /ref/1.3.5:
+    dependencies:
+      bindings: 1.3.0
+      debug: 2.6.9
+      nan: 2.10.0
+    dev: false
+    optional: true
+    resolution:
+      integrity: sha512-2cBCniTtxcGUjDpvFfVpw323a83/0RLSGJJY5l5lcomZWhYpU2cuLdsvYqMixvsdLJ9+sTdzEkju8J8ZHDM2nA==
   /request/2.85.0:
     dependencies:
       aws-sign2: 0.7.0
@@ -855,6 +919,9 @@ specifiers:
   discord.js: ^11.3.2
   dog-facts: ^1.0.3
   express: ^4.16.3
+  ffmpeg-binaries: ^3.2.2
+  node-opus: ^0.2.7
+  opusscript: ^0.0.6
   panda-facts: ^1.0.3
   penguin-facts: ^1.0.1
   raven: ^2.4.2

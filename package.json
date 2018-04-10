@@ -32,6 +32,9 @@
     "request": "^2.85.0",
     "dog-facts": "^1.0.3",
     "panda-facts": "^1.0.3",
-    "penguin-facts": "^1.0.1"
+    "penguin-facts": "^1.0.1",
+    "ffmpeg-binaries": "^3.2.2",
+    "node-opus": "^0.2.7",
+    "opusscript": "^0.0.6"
   }
 }
