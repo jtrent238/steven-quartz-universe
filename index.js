@@ -152,6 +152,7 @@ client.on('message', message => {
                                 '<:NewRoseGem:422744912182902785> `randomgem` = Gets a random Gem! <:NewRoseGem:422744912182902785> \n' + 
                                 '<:NewRoseGem:422744912182902785> `randomcat` = Gets a random image of a cat! :cat: \n' +
                                 '<:NewRoseGem:422744912182902785> `randomdog` = Gets a random image of a dog! :dog: \n' +
+                                '<:NewRoseGem:422744912182902785> `catfact` = Gets a random cat fact. :cat: \n' +
                                 '<:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785>');
     
   }
@@ -315,7 +316,7 @@ client.on('message', message => {
   if (!error && response.statusCode == 200) {
      var importedJSON = JSON.parse(body);
      console.log(body);
-        message.channel.send("Here is a random cat: ", {file: "http:/random.cat/meow/" + body});
+        message.channel.send("Here is a random cat: ", {file: importedJSON.img + body});
   }
 })
     //message.channel.send("Here is a random cat: ", {file: body});
@@ -333,6 +334,39 @@ client.on('message', message => {
     //message.channel.send("Here is a random cat: ", {file: body});
     //message.channel.send("Here is a random dog: ", {file: FileReader("https://random.dog/woof")});
   }
+  
+    //Sends a random cat fact
+  if (message.content.startsWith(prefix + 'catfact')) {
+    //message.channel.send("Work in Progress");
+//      var catfact = require('https://catfact.ninja/fact'());
+  //    console.log(catfact.fact);
+    request('https://catfact.ninja/fact', function (error, response, body) {
+  if (!error && response.statusCode == 200) {
+     var importedJSON = JSON.parse(body);
+  //   console.log(catfact.fact);
+        message.channel.send("Did you know? " + importedJSON.fact);
+  }
+})
+    //message.channel.send("Here is a random cat: ", {file: body});
+    //message.channel.send("Here is a random dog: ", {file: FileReader("https://random.dog/woof")});
+  }
+  
+     //Tells you your Location
+  if (message.content.startsWith(prefix + 'whereami')) {
+    //message.channel.send("Work in Progress");
+//      var catfact = require('https://catfact.ninja/fact'());
+  //    console.log(catfact.fact);
+    request('https://www.googleapis.com/geolocation/v1/geolocate?key=' + process.env.GOOGLE_API_KEY, function (error, response, body) {
+  if (!error && response.statusCode == 200) {
+     var importedJSON = JSON.parse(body);
+  //   console.log(catfact.fact);
+        message.channel.send("This is where your device says you are located: " + "\n latitude: " + importedJSON.lat + "\n longitude: " + importedJSON.lng + "\n accuracy: " + importedJSON.accuracy);
+  }
+})
+    //message.channel.send("Here is a random cat: ", {file: body});
+    //message.channel.send("Here is a random dog: ", {file: FileReader("https://random.dog/woof")});
+  }
+  
       /*
     //Flip a coin
   if (message.content.startsWith(prefix + 'coin2' + type)) {
