@@ -60,8 +60,19 @@ client.on('ready',() => {
   hook.send('I am now alive!');
   //game(streamingGame);
 });
-
-
+////////////////////////PATCH ISSUE #13
+client.on("error", (err) => {
+	console.log("Error: " + err)
+});
+process.on('unhandledRejection', function (err,p) {
+    console.log(err,p)
+})
+process.on('warning', (warning) => {
+    console.warn(warning.name);    // Print the warning name
+    console.warn(warning.message); // Print the warning message
+    console.warn(warning.stack);   // Print the stack trace
+});
+///////////////////////////////////////
 var streamingGame = {type: 1, name: "Steven Universe: Save the Light", url: "https://twitch.tv/jtrent238"}; // "Streaming"
 // note: streaming status requires a valid twitch url:
 //       ex. "http://twitch.tv/channel"
@@ -430,9 +441,10 @@ client.on('message', message => {
   }
   
   //Gets a player's Minecraft skin.
+  //PATCH ISSUE#4 - LOOK AT MY COMMENT
       /*
+      //var mcname = "jtrent238";//jtrent238's username as a test
   if (message.content.startsWith(prefix + 'mcskin' + mcname)) {
-    //var mcname = "jtrent238";//jtrent238's username as a test
     message.channel.send(mcname + "'s Skin", {file: 'https://crafatar.com/renders/body/' + mcname});
   }
       */
