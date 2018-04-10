@@ -429,10 +429,11 @@ client.on('message', message => {
     });
   }
   
-  //Gets a player's Minecraft skin.
+//Gets a player's Minecraft skin.
+  //PATCH ISSUE#4 - LOOK AT MY COMMENT
       /*
+      //var mcname = "jtrent238";//jtrent238's username as a test
   if (message.content.startsWith(prefix + 'mcskin' + mcname)) {
-    //var mcname = "jtrent238";//jtrent238's username as a test
     message.channel.send(mcname + "'s Skin", {file: 'https://crafatar.com/renders/body/' + mcname});
   }
       */
