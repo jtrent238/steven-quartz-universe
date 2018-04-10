@@ -48,6 +48,9 @@ const ShardingManager = new Discord.ShardingManager("shard.js", {name: "Steven S
 //const uptime = new Discord.Client().uptime;
 const DBL = require("dblapi.js");
 const dbl = new DBL(process.env.DISCORD_BOTS_LIST_TOKEN, client);
+const dogFacts = require('dog-facts');
+const pandaFacts = require('panda-facts');
+//const penguinFacts = require('penguin-facts');
 
 const prefix = '~';
 
@@ -153,6 +156,8 @@ client.on('message', message => {
                                 '<:NewRoseGem:422744912182902785> `randomcat` = Gets a random image of a cat! :cat: \n' +
                                 '<:NewRoseGem:422744912182902785> `randomdog` = Gets a random image of a dog! :dog: \n' +
                                 '<:NewRoseGem:422744912182902785> `catfact` = Gets a random cat fact. :cat: \n' +
+                                '<:NewRoseGem:422744912182902785> `pandafact` = Gets a random panda fact. :panda: \n' +
+                                '<:NewRoseGem:422744912182902785> `penguinfact` = Gets a random penguin fact. :penguin: \n' +
                                 '<:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785> <:NewRoseGem:422744912182902785>');
     
   }
@@ -350,6 +355,22 @@ client.on('message', message => {
     //message.channel.send("Here is a random cat: ", {file: body});
     //message.channel.send("Here is a random dog: ", {file: FileReader("https://random.dog/woof")});
   }
+  
+     //Sends a random dog fact
+  if (message.content.startsWith(prefix + 'dogfact')) {
+        message.channel.send("Did you know? " + dogFacts.random());
+  }
+  
+  //Sends a random panda fact
+  if (message.content.startsWith(prefix + 'pandafact')) {
+        message.channel.send("Did you know? " + pandaFacts.random());
+  }
+  
+  //Sends a random penguin fact
+  if (message.content.startsWith(prefix + 'penguinfact')) {
+        message.channel.send("Did you know? " + penguinFacts.random());
+  }
+  
   
      //Tells you your Location
   if (message.content.startsWith(prefix + 'whereami')) {

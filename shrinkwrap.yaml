@@ -1,7 +1,10 @@
 dependencies:
   dblapi.js: 2.0.0
   discord.js: 11.3.2
+  dog-facts: 1.0.3
   express: 4.16.3
+  panda-facts: 1.0.3
+  penguin-facts: 1.0.1
   raven: 2.4.2
   raven-js: 3.23.3
   request: 2.85.0
@@ -225,6 +228,12 @@ packages:
       uws: ^9.14.0
     resolution:
       integrity: sha512-Abw9CTMX3Jb47IeRffqx2VNSnXl/OsTdQzhvbw/JnqCyqc2imAocc7pX2HoRmgKd8CgSqsjBFBneusz/E16e6A==
+  /dog-facts/1.0.3:
+    dependencies:
+      unique-random-array: 1.0.1
+    dev: false
+    resolution:
+      integrity: sha1-ZcT3gefFNgwHm0exlcQAckVb7H0=
   /ecc-jsbn/0.1.1:
     dependencies:
       jsbn: 0.1.1
@@ -537,6 +546,12 @@ packages:
       node: '>= 0.8'
     resolution:
       integrity: sha1-IPEzZIGwg811M3mSoWlxqi2QaUc=
+  /panda-facts/1.0.3:
+    dependencies:
+      unique-random-array: 1.0.1
+    dev: false
+    resolution:
+      integrity: sha1-lfLIpAN6SUdFots47ZZkeQ3gmP8=
   /parseurl/1.3.2:
     dev: false
     engines:
@@ -547,6 +562,12 @@ packages:
     dev: false
     resolution:
       integrity: sha1-32BBeABfUi8V60SQ5yR6G/qmf4w=
+  /penguin-facts/1.0.1:
+    dependencies:
+      unique-random-array: 1.0.1
+    dev: false
+    resolution:
+      integrity: sha512-9WZDLDd0kWghb+zDQT1WtUVg3e90mhD8njbFzjJndRInwqB07nIscKxv8y5MhTaDRozsDd4z1uyx0R2BiKZSpw==
   /performance-now/2.1.0:
     dev: false
     resolution:
@@ -769,6 +790,20 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha512-HRkVv/5qY2G6I8iab9cI7v1bOIdhm94dVjQCPFElW9W+3GeDOSHmy2EBYe4VTApuzolPcmgFTN3ftVJRKR2J9Q==
+  /unique-random-array/1.0.1:
+    dependencies:
+      unique-random: 1.0.0
+    dev: false
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha512-z9J/SV8CUIhIRROcHe9YUoAT6XthUJt0oUyLGgobiXJprDP9O9dsErNevvSaAv5BkhwFEVPn6nIEOKeNE6Ck1Q==
+  /unique-random/1.0.0:
+    dev: false
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha1-zj4iTIJCzTOg53sNcYDXfmti0MQ=
   /unpipe/1.0.0:
     dev: false
     engines:
@@ -818,7 +853,10 @@ shrinkwrapVersion: 3
 specifiers:
   dblapi.js: ^2.0.0
   discord.js: ^11.3.2
+  dog-facts: ^1.0.3
   express: ^4.16.3
+  panda-facts: ^1.0.3
+  penguin-facts: ^1.0.1
   raven: ^2.4.2
   raven-js: ^3.23.3
   request: ^2.85.0

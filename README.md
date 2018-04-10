@@ -33,6 +33,8 @@ The prefix for the bot is `~`
 - `randomcat` = Gets a random image of a cat! :cat:
 - `randomdog` = Gets a random image of a dog! :dog:
 - `catfact` = Gets a random cat fact. :cat:
+- `pandafact` = Gets a random panda fact. :panda:
+- `penguinfact` = Gets a random penguin fact. :penguin: 
 
 ### Developer Commands
 
