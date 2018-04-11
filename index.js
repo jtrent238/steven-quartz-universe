@@ -43,6 +43,7 @@ const Discord = require('discord.js');
 //const discordjs = require('discord.js-music');
 const client = new Discord.Client();
 const Bot = new Discord.Client();
+const bot = Bot;
 const hook = new Discord.WebhookClient('webhook id', process.env.WEBHOOK_TOKEN);
 //const Manager = new Discord.ShardingManager('./index.js');
 const ShardingManager = new Discord.ShardingManager("shard.js", {name: "Steven Shards", stats: true, clusters: 2, shards: 4, debug: true});
@@ -51,7 +52,13 @@ const DBL = require("dblapi.js");
 const dbl = new DBL(process.env.DISCORD_BOTS_LIST_TOKEN, client);
 const dogFacts = require('dog-facts');
 const pandaFacts = require('panda-facts');
+const ffmpeg = require('ffmpeg');
 
+const discordIRC = require('discord-irc');
+const discord_irc_config = require('./discord_irc_config.json');
+//DiscordIRC Settings
+discordIRC.discordToken = process.env.TOKEN;
+discordIRC.webhookOptions = process.env.IRC_WEBHOOK_TOKEN;
 
 //const penguinFacts = require('penguin-facts');
 
@@ -298,12 +305,17 @@ client.on('message', message => {
   
   //Steven Loves Cookie Cat
   if (message.content.startsWith('Cookie Cat')) {
-    message.channel.sendMessage('I Love Cookie Cat! <:cookiecat:423144575650103317>');
+    message.channel.sendMessage('I Love Cookie Cat! <:cookiecat:423144575650103317>\nIf you are in a Voice channel I will sing the song!<:cookiecat:423144575650103317>');
+    const connection = message.member.voiceChannel.join();
+    const dispatcher = connection.play('https://cdn.glitch.com/3b971df8-c1b8-4b3d-8b2c-749c9e197d77%2Fcookie_cat.mp3');
   }  
   
   //Steven Loves Cookie Cat
   if (message.content.startsWith(prefix + 'cookiecat')) {
-    message.channel.sendMessage('I Love Cookie Cat! <:cookiecat:423144575650103317>');
+    message.channel.sendMessage('I Love Cookie Cat! <:cookiecat:423144575650103317>\nIf you are in a Voice channel I will sing the song! <:cookiecat:423144575650103317>');
+    const connection = message.member.voiceChannel.join();
+    bot.voiceConnection.playFile('https://cdn.glitch.com/3b971df8-c1b8-4b3d-8b2c-749c9e197d77%2Fcookie_cat.mp3');
+    connection.play('https://cdn.glitch.com/3b971df8-c1b8-4b3d-8b2c-749c9e197d77%2Fcookie_cat.mp3');
   }
   
   //Sends a archive on the src code
