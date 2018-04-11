@@ -4,7 +4,7 @@ const app = express();
 app.get("/", (request, response) => {
   console.log(Date.now() + " Ping Received");
   //response.sendStatus(200);
-  response.sendFile(__dirname + '/site/index.html');
+  //response.sendFile(__dirname + '/site/index.html');
   
 });
 app.listen(process.env.PORT);
@@ -94,6 +94,7 @@ var coin = ["https://cdn.glitch.com/3b971df8-c1b8-4b3d-8b2c-749c9e197d77%2F1200p
 
 var jtrent238_dragcave_dragons = ["https://dragcave.net/image/bWXth.gif", "https://dragcave.net/image/bNiLa.gif", "https://dragcave.net/image/2UDH4.gif", "https://dragcave.net/image/ms4Pd.gif", "https://dragcave.net/image/Ebdfu.gif", "https://dragcave.net/image/7REXG.gif", "https://dragcave.net/image/6qHBZ.gif", "https://dragcave.net/image/RBq20.gif", "https://dragcave.net/image/syXNo.gif", "https://dragcave.net/image/QaDYV.gif", "https://dragcave.net/image/fckMm.gif", "https://dragcave.net/image/G5pPJ.gif", "https://dragcave.net/image/O9i4f.gif", "https://dragcave.net/image/FHuDQ.gif", "https://dragcave.net/image/cmUnu.gif", "https://dragcave.net/image/o8uI6.gif", "https://dragcave.net/image/7YGGy.gif"]
 
+var cookiecatmp3 = ["https://cdn.glitch.com/3b971df8-c1b8-4b3d-8b2c-749c9e197d77%2Fcookie_cat.mp3"]
 var developerids = ["204669722094993417"]
 	/**
 	 * Checks if a user is an admin.
@@ -317,8 +318,10 @@ client.on('message', message => {
   if (message.content.startsWith(prefix + 'cookiecat')) {
     message.channel.sendMessage('I Love Cookie Cat! <:cookiecat:423144575650103317>\nIf you are in a Voice channel I will sing the song! <:cookiecat:423144575650103317>');
     const connection = message.member.voiceChannel.join();
-    bot.voiceConnection.playFile('https://cdn.glitch.com/3b971df8-c1b8-4b3d-8b2c-749c9e197d77%2Fcookie_cat.mp3');
-    connection.play('https://cdn.glitch.com/3b971df8-c1b8-4b3d-8b2c-749c9e197d77%2Fcookie_cat.mp3');
+    connection.playFile(cookiecatmp3);
+    //const dispatcher = connection.play('https://cdn.glitch.com/3b971df8-c1b8-4b3d-8b2c-749c9e197d77%2Fcookie_cat.mp3');
+    //bot.voiceConnection.playFile('https://cdn.glitch.com/3b971df8-c1b8-4b3d-8b2c-749c9e197d77%2Fcookie_cat.mp3');
+    //connection.play('https://cdn.glitch.com/3b971df8-c1b8-4b3d-8b2c-749c9e197d77%2Fcookie_cat.mp3');
   }
   
   //Sends a archive on the src code
@@ -558,7 +561,8 @@ client.on('message', message => {
   
   //Get the users avatar
   if (message.content.startsWith(prefix + 'pilot')) {
-   message.channel.send("", {file: "https://cdn.glitch.com/3b971df8-c1b8-4b3d-8b2c-749c9e197d77%2Fr5o6u_1.mp4"});
+    //message.channel.send("I will try to send the vid!");
+   message.channel.send("https://www.youtube.com/watch?v=vNNkzy-JO8g");
   }
   //In the case of an error send this message
   //if (message.content.startsWith('')) {
