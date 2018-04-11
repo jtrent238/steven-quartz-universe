@@ -5,7 +5,6 @@ app.get("/", (request, response) => {
   console.log(Date.now() + " Ping Received");
   //response.sendStatus(200);
   response.sendFile(__dirname + '/site/index.html');
-  response.sendFile(__dirname + '/site/login.html');
   
 });
 app.listen(process.env.PORT);
@@ -92,6 +91,8 @@ var episodes = ["S1E1 Gem Glow", "S1E2 Laser Light Cannon", "S1E3 Cheeseburger B
 var dice = ["https://cdn.glitch.com/3b971df8-c1b8-4b3d-8b2c-749c9e197d77%2F1_5i3bBsz_bMcGQ-UgDMCzQA.png", "https://cdn.glitch.com/3b971df8-c1b8-4b3d-8b2c-749c9e197d77%2F1_dqZhjZbsbEBDXzKQPAagXw.png", "https://cdn.glitch.com/3b971df8-c1b8-4b3d-8b2c-749c9e197d77%2F1_DrPdeWaJON0XbtmiEZc3jw.png", "https://cdn.glitch.com/3b971df8-c1b8-4b3d-8b2c-749c9e197d77%2F1_5w7bpE0KdwXc21zUQoOtOw.png", "https://cdn.glitch.com/3b971df8-c1b8-4b3d-8b2c-749c9e197d77%2F1_UYR8l1h7AI4MNtJWAugyjg.png", "https://cdn.glitch.com/3b971df8-c1b8-4b3d-8b2c-749c9e197d77%2F1_15_KIo9vPHULoA98NYT9jQ.png"]
 
 var coin = ["https://cdn.glitch.com/3b971df8-c1b8-4b3d-8b2c-749c9e197d77%2F1200px-1879S_Morgan_Dollar_NGC_MS67plus_Obverse.png", "https://cdn.glitch.com/3b971df8-c1b8-4b3d-8b2c-749c9e197d77%2F800px-1879S_Morgan_Dollar_NGC_MS67plus_Reverse.png"]
+
+var jtrent238_dragcave_dragons = ["https://dragcave.net/image/bWXth.gif", "https://dragcave.net/image/bNiLa.gif", "https://dragcave.net/image/2UDH4.gif", "https://dragcave.net/image/ms4Pd.gif", "https://dragcave.net/image/Ebdfu.gif", "https://dragcave.net/image/7REXG.gif", "https://dragcave.net/image/6qHBZ.gif", "https://dragcave.net/image/RBq20.gif", "https://dragcave.net/image/syXNo.gif", "https://dragcave.net/image/QaDYV.gif", "https://dragcave.net/image/fckMm.gif", "https://dragcave.net/image/G5pPJ.gif", "https://dragcave.net/image/O9i4f.gif", "https://dragcave.net/image/FHuDQ.gif", "https://dragcave.net/image/cmUnu.gif", "https://dragcave.net/image/o8uI6.gif", "https://dragcave.net/image/7YGGy.gif"]
 
 var developerids = ["204669722094993417"]
 	/**
@@ -553,6 +554,11 @@ client.on('message', message => {
    //NSFW - You know what this is! Right?
   if (message.content.startsWith(prefix + 'nsfw' + '')) {
     message.channel.sendMessage('ERROR: This command is Disabled! <:steven_neutral:422744915823558678>');
+  }
+  
+  //Get the users avatar
+  if (message.content.startsWith(prefix + 'pilot')) {
+   message.channel.send("", {file: "https://cdn.glitch.com/3b971df8-c1b8-4b3d-8b2c-749c9e197d77%2Fr5o6u_1.mp4"});
   }
   //In the case of an error send this message
   //if (message.content.startsWith('')) {
