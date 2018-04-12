@@ -4,7 +4,7 @@ const app = express();
 app.get("/", (request, response) => {
   console.log(Date.now() + " Ping Received");
   //response.sendStatus(200);
-  //esponse.sendFile(__dirname + '/site/index.html');
+  response.sendFile(__dirname + '/site/index.html');
   
 });
 app.listen(process.env.PORT);
