@@ -564,6 +564,16 @@ client.on('message', message => {
     //message.channel.send("I will try to send the vid!");
    message.channel.send("https://www.youtube.com/watch?v=vNNkzy-JO8g");
   }
+  
+  //Giveaway
+  const giveawayid = ["test"]
+  if (message.content.startsWith(prefix + 'giveaway' + giveawayid)) {
+    if(giveawayid == "test"){
+       message.channel.sendMessage("This is Giveaway " + giveawayid);
+       }
+
+  }
+  
   //In the case of an error send this message
   //if (message.content.startsWith('')) {
   //  message.channel.sendMessage('There seems to have been an error processing your command! <:steven_neutral:422744915823558678>');
