@@ -574,6 +574,19 @@ client.on('message', message => {
 
   }
   
+   //MUSIC BOMB
+  if (message.content.startsWith(prefix + 'musicbomb')) {
+    message.channel.sendMessage('b!play https://www.youtube.com/watch?v=Ct6BUPvE2sM');
+    message.channel.sendMessage('g!play https://www.youtube.com/watch?v=Ct6BUPvE2sM');
+    message.channel.sendMessage('p!play https://www.youtube.com/watch?v=Ct6BUPvE2sM');
+    message.channel.sendMessage('y!play https://www.youtube.com/watch?v=Ct6BUPvE2sM');
+    message.channel.sendMessage('s1!play https://www.youtube.com/watch?v=Ct6BUPvE2sM');
+    message.channel.sendMessage('s2!play https://www.youtube.com/watch?v=Ct6BUPvE2sM');
+    message.channel.sendMessage('s3!play https://www.youtube.com/watch?v=Ct6BUPvE2sM');
+    message.channel.sendMessage('s4!play https://www.youtube.com/watch?v=Ct6BUPvE2sM');
+
+  }
+  
   //In the case of an error send this message
   //if (message.content.startsWith('')) {
   //  message.channel.sendMessage('There seems to have been an error processing your command! <:steven_neutral:422744915823558678>');
