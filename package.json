@@ -24,16 +24,16 @@
   "dependencies": {
     "discord.js": "^11.3.2",
     "express": "^4.16.3",
-    "raven-js": "^3.24.1",
-    "raven": "^2.5.0",
-    "spotify-web-api-js": "^0.23.0",
+    "raven-js": "^3.25.2",
+    "raven": "^2.6.2",
+    "spotify-web-api-js": "^0.24.0",
     "spotify": "^0.3.0",
-    "dblapi.js": "^2.0.0",
-    "request": "^2.85.0",
+    "dblapi.js": "^2.0.1",
+    "request": "^2.87.0",
     "dog-facts": "^1.0.3",
     "panda-facts": "^1.0.3",
-    "penguin-facts": "^1.0.1",
-    "discord-irc": "^2.5.0",
+    "penguin-facts": "^1.0.2",
+    "discord-irc": "^2.6.1",
     "ffmpeg": "^0.0.4"
   }
 }
