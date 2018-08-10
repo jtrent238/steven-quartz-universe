@@ -410,20 +410,55 @@ client.on('message', message => {
       */
   
      //Tells you your Location
-  if (message.content.startsWith(prefix + 'whereami')) {
+//  if (message.content.startsWith(prefix + 'whereami')) {
     //message.channel.send("Work in Progress");
 //      var catfact = require('https://catfact.ninja/fact'());
   //    console.log(catfact.fact);
-    request('https://www.googleapis.com/geolocation/v1/geolocate?key=' + process.env.GOOGLE_API_KEY, function (error, response, body) {
-  if (!error && response.statusCode == 200) {
-     var importedJSON = JSON.parse(body);
+//    request('https://www.googleapis.com/geolocation/v1/geolocate?key=' + process.env.GOOGLE_API_KEY, function (error, response, body) {
+//  if (!error && response.statusCode == 200) {
+//     var importedJSON = JSON.parse(body);
   //   console.log(catfact.fact);
-        message.channel.send("This is where your device says you are located: " + "\n latitude: " + importedJSON.lat + "\n longitude: " + importedJSON.lng + "\n accuracy: " + importedJSON.accuracy);
-  }
-})
+//        message.channel.send("This is where your device says you are located: " + "\n latitude: " + importedJSON.lat + "\n longitude: " + importedJSON.lng + "\n accuracy: " + importedJSON.accuracy);
+//  }
+//})
     //message.channel.send("Here is a random cat: ", {file: body});
     //message.channel.send("Here is a random dog: ", {file: FileReader("https://random.dog/woof")});
-  }
+//  }
+  
+     //Tells you your Information
+//  if (message.content.startsWith(prefix + 'myinfo')) {
+    //message.channel.send("Work in Progress");
+//      var catfact = require('https://catfact.ninja/fact'());
+  //    console.log(catfact.fact);
+//    request('http://gd.geobytes.com/GetCityDetails' + process.env.GOOGLE_API_KEY, function (error, response, body) {
+//  if (!error && response.statusCode == 200) {
+//     var importedJSON = JSON.parse(body);
+  //   console.log(catfact.fact);
+//        message.channel.send("This is what I found about you: " + 
+//                             "\n IP: " + importedJSON.geobytesipaddress + 
+//                             "\n RemoteIP: " + importedJSON.geobytesremoteip + 
+//                             "\n Country: " + importedJSON.geobytesregionlocationcode + 
+//                             "\n Country Code: " + importedJSON.accuracy +
+//                             "\n Region: " + importedJSON.geobytesregion +
+//                             "\n City: " + importedJSON.geobytescity +
+//                             "\n City ID: " + importedJSON.geobytescityid +
+//                             "\n fqcn: " + importedJSON.geobytesfqcn +
+//                             "\n Latitude: " + importedJSON.geobyteslatitude +
+//                             "\n Longitude: " + importedJSON.geobyteslongitude +
+//                             "\n Capital: " + importedJSON.geobytescapital +
+//                             "\n TimeZone: " + importedJSON.geobytestimezone +
+//                             "\n Nationality: " + importedJSON.geobytesnationalitysingular +
+//                             "\n Population: " + importedJSON.geobytespopulation +
+//                             "\n Conitent: " + importedJSON.geobytesmapreference +
+//                             "\n Currency: " + importedJSON.geobytescurrency +
+//                             "\n Currency Code: " + importedJSON.geobytescurrencycode +
+//                             "\n Title: " + importedJSON.geobytestitle +
+//                             "\n Location Code: " + importedJSON.geobyteslocationcode +
+//                             "\n DMA: " + importedJSON.geobytesdma +
+//                             "\n Ceratinty: " + importedJSON.geobytescertainty);
+//  }
+//})
+//  }
   
       /*
     //Flip a coin
