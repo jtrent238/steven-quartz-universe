@@ -262,8 +262,14 @@ client.on('message', message => {
     
   //Server Count
     if (message.content.startsWith(prefix + 'usercount')) {
-    message.channel.sendMessage('I have : ' + Discord.members.filter(m => m.presence.status === 'online') + ' users!');
+    message.channel.sendMessage('I have : ' + client.guilds.memberCount + ' users!');
   }
+  
+  //Guild Information
+    if (message.content.startsWith(prefix + 'guildinfo')) {
+    //message.channel.sendMessage('Here is some Info for the current Guild: ' + '\n Guild Name: ' + guild.name);
+  }
+  
   
   //Gets the bots ping
   if (message.content.startsWith(prefix + 'ping')) {
