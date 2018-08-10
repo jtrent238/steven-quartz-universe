@@ -72,6 +72,7 @@ client.on('ready',() => {
   console.log(`Is client Verified?: ${client.user.verified}!`);
   console.log(`Client Created on: ${client.user.createdAt}!`);
   hook.send('I am now alive!');
+  client.user.setActivity(`with ${client.guilds.size} Crystal Gems`);
   //game(streamingGame);
 });
 
