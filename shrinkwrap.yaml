@@ -113,6 +113,7 @@ packages:
     dependencies:
       cowsay: 1.3.0
     dev: false
+    hasBin: true
     resolution:
       integrity: sha1-vSsjDY023HNC3FKGhpQHvPFyzjo=
   /co/4.6.0:
@@ -175,6 +176,7 @@ packages:
     dev: false
     engines:
       node: '>= 4'
+    hasBin: true
     resolution:
       integrity: sha512-cbPcPpK2wdFwC7VnFy7LOQRq7N1IWO2F57cYjpTN06H8WryLzSST9Q8rwdO3Z98JHHpwexdAuxLLhSIUkkg8Qw==
   /crypt/0.0.2:
@@ -244,6 +246,7 @@ packages:
     dev: false
     engines:
       node: '>=6.0.0'
+    hasBin: true
     resolution:
       integrity: sha512-5sRB7Ggpe6qn09NarfYhXwg6jVPYprFV1g9+14W9STcr8IE1ElFz+dKqObWTDYaVZt1dwU2I72XmccG0+UhAjA==
   /discord.js/11.3.2:
@@ -610,6 +613,7 @@ packages:
       integrity: sha512-lc/aahn+t4/SWV/qcmumYjymLsWfN3ELhpmVuUFjgsORruuZPVSwAQryq+HHGvO/SI2KVX26bx+En+zhM8g8hQ==
   /mime/1.4.1:
     dev: false
+    hasBin: true
     resolution:
       integrity: sha512-KI1+qOZu5DcW6wayYHSzR/tXKCDC5Om4s1z2QJjDULzLcmf3DvzS7oluY4HCTrc+9FiKmWUgeNLg7W3uIQvxtQ==
   /minimist/0.0.10:
@@ -724,6 +728,7 @@ packages:
     dev: false
     engines:
       node: '>= 4.0.0'
+    hasBin: true
     resolution:
       integrity: sha1-yS8wiQ4t/NFSWNGE5D45Mm5YAy4=
   /raw-body/2.3.2:
@@ -843,6 +848,7 @@ packages:
     dev: false
     engines:
       node: '>=0.10.0'
+    hasBin: true
     optionalDependencies:
       bcrypt-pbkdf: 1.0.1
       ecc-jsbn: 0.1.1
@@ -955,10 +961,12 @@ packages:
       integrity: sha1-n5VxD1CiZ5R7LMwSR0HBAoQn5xM=
   /uuid/3.0.0:
     dev: false
+    hasBin: true
     resolution:
       integrity: sha1-Zyj8BFnEUNeWqZwxg3VpvfZy1yg=
   /uuid/3.2.1:
     dev: false
+    hasBin: true
     resolution:
       integrity: sha512-jZnMwlb9Iku/O3smGWvZhauCf6cvvpKi4BKRiliS3cxnI+Gz9j5MEpTz2UFuXiKPJocb7gnsLHwiS05ige5BEA==
   /vary/1.1.2:
@@ -1016,7 +1024,7 @@ packages:
     resolution:
       integrity: sha1-Ml+T6y0OAW/0QtTjW90CbsLNopI=
 registry: 'https://registry.npmjs.org/'
-shrinkwrapMinorVersion: 6
+shrinkwrapMinorVersion: 8
 shrinkwrapVersion: 3
 specifiers:
   dblapi.js: ^2.0.1
