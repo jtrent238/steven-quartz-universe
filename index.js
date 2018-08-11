@@ -72,7 +72,8 @@ client.on('ready',() => {
   console.log(`Is client Verified?: ${client.user.verified}!`);
   console.log(`Client Created on: ${client.user.createdAt}!`);
   hook.send('I am now alive!');
-  client.user.setActivity(`with ${client.guilds.size} Crystal Gems`);
+  client.user.setActivity({type: 1, name: "Steven Universe: Save the Light", url: "https://twitch.tv/jtrent238"});
+  //client.user.setActivity(`with ${client.guilds.size} Crystal Gems`);
   //game(streamingGame);
 });
 
@@ -604,7 +605,9 @@ client.on('message', message => {
   //Get the users avatar
   if (message.content.startsWith(prefix + 'pilot')) {
     //message.channel.send("I will try to send the vid!");
-   message.channel.send("https://www.youtube.com/watch?v=vNNkzy-JO8g");
+    message.channel.send("https://cdn.glitch.com/3b971df8-c1b8-4b3d-8b2c-749c9e197d77%2FSteven%20Universe%20-%20Pilot%20Episode%20(ENGLISH).mp4?1533949700881");
+    //message.channel.send("", {file: 'https://cdn.glitch.com/3b971df8-c1b8-4b3d-8b2c-749c9e197d77%2FSteven%20Universe%20-%20Pilot%20Episode%20(ENGLISH).mp4?1533949700881'});
+    //message.channel.send("https://www.youtube.com/watch?v=vNNkzy-JO8g"); //This video was taken down.
   }
   
   //Giveaway
