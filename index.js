@@ -624,6 +624,13 @@ client.on('message', message => {
     message.channel.sendMessage('ERROR: This command is Disabled! <:steven_neutral:422744915823558678>');
   }
   
+     //MUSIC BOMB
+  if (message.content.startsWith(prefix + 'fakejoin')) {
+    message.channel.sendMessage(message.guild.fetchMember(message.author) + ' Just Joined, Welcome!');
+    client.emit('guildMemberAdd', message.member + message.guild.fetchMember(message.author));
+  }
+
+  
   //In the case of an error send this message
   
   //Creates an invite
