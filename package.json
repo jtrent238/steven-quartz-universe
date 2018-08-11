@@ -22,18 +22,22 @@
   },
   "homepage": "https://github.com/jtrent238/steven-quartz-universe#readme",
   "dependencies": {
-    "discord.js": "^11.3.2",
+    "discord.js": "^11.4.0",
     "express": "^4.16.3",
-    "raven-js": "^3.25.2",
-    "raven": "^2.6.2",
+    "raven-js": "^3.26.4",
+    "raven": "^2.6.3",
     "spotify-web-api-js": "^0.24.0",
     "spotify": "^0.3.0",
-    "dblapi.js": "^2.0.1",
-    "request": "^2.87.0",
+    "dblapi.js": "^2.2.0",
+    "request": "^2.88.0",
     "dog-facts": "^1.0.3",
     "panda-facts": "^1.0.3",
     "penguin-facts": "^1.0.2",
     "discord-irc": "^2.6.1",
-    "ffmpeg": "^0.0.4"
+    "ffmpeg": "^0.0.4",
+    "hookcord": "^1.2.1",
+    "sparkbots": "^0.0.6",
+    "discord-musicbot": "^0.1.4",
+    "discordtools": "^2.0.15"
   }
 }

@@ -61,7 +61,14 @@ const discord_irc_config = require('./discord_irc_config.json');
 discordIRC.discordToken = process.env.TOKEN;
 discordIRC.webhookOptions = process.env.IRC_WEBHOOK_TOKEN;
 
+var hookcord = require('hookcord');
+var Base = hookcord.Base;
+//var hook = new Base("HOOK_ID/HOOK_SECRET");
+
 //const penguinFacts = require('penguin-facts');
+
+
+
 
 const prefix = '~';
 
