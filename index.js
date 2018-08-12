@@ -504,10 +504,11 @@ client.on('message', message => {
     if(message.member.id == 204669722094993417) {
       console.log(`Yay, its jtrent238!`);
       message.channel.sendMessage('Bye Bye! <:steven_neutral:422744915823558678>');
-      client.logout;
-      Discord.logout;
-      client.logOut((err) => {
-        console.log(err);});
+      client.disconnect;
+      //client.logout;
+      //Discord.logout;
+      //client.disconnect((err) => {
+      //  console.log(err);});
       }
     else {
       console.log(`Nope, noppers, nadda. (NOT jtrent238)`);
