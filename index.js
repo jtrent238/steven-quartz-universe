@@ -67,6 +67,7 @@ var Base = hookcord.Base;
 
 //const penguinFacts = require('penguin-facts');
 
+//var qr = require('qr-image');
 
 
 
@@ -631,7 +632,34 @@ client.on('message', message => {
     message.channel.sendMessage('ERROR: This command is Disabled! <:steven_neutral:422744915823558678>');
   }
   
-
+      //Sends Status of Electroneum
+  if (message.content.startsWith(prefix + 'etn!stats')) {
+    request('', function (error, response, body) {
+  if (!error && response.statusCode == 200) {
+     var importedJSON = JSON.parse(body);
+                message.channel.send("Here is the current stats of " + importedJSON.name + " Name: " + importedJSON.name +
+                            "\n Symbol: " + importedJSON.symbol+
+                            "\n Rank: " + importedJSON.rank+
+                            "\n Circulating Supply: " + importedJSON.circulating_supply+
+                            "\n Total Supply: " + importedJSON.total_supply+
+                            "\n Max Supply: " + importedJSON.max_supply+
+                            "\n Quotes: " + importedJSON.quotes+
+                            "\n Last Updated: " + importedJSON.last_updated);
+  }
+})
+    //message.channel.send("Here is a random cat: ", {file: body});
+    //message.channel.send("Here is a random dog: ", {file: FileReader("https://random.dog/woof")});
+  }
+  
+  
+     //NSFW - You know what this is! Right?
+  //if (message.content.startsWith(prefix + 'qr' + "")) {
+  //  let site = "";
+  //  var code = qr.image('${site}', { type: 'png' });
+  //  message.channel.sendMessage('ERROR: This command is Disabled! <:steven_neutral:422744915823558678>');
+  //}
+  
+  
   //In the case of an error send this message
   
   //Creates an invite

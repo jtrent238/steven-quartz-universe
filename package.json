@@ -38,6 +38,7 @@
     "hookcord": "^1.2.1",
     "sparkbots": "^0.0.6",
     "discord-musicbot": "^0.1.4",
-    "discordtools": "^2.0.15"
+    "discordtools": "^2.0.15",
+    "qr-image": "^3.2.0"
   }
 }
