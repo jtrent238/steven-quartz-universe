@@ -634,22 +634,27 @@ client.on('message', message => {
   }
   
       //Sends Status of Electroneum
-  if (message.content.startsWith(prefix + 'etn!stats')) {
-    request('', function (error, response, body) {
+  if (message.content.startsWith('etn!stats')) {
+    request('https://api.coinmarketcap.com/v2/ticker/2137/', function (error, response, body) {
   if (!error && response.statusCode == 200) {
      var importedJSON = JSON.parse(body);
-                message.channel.send("Here is the current stats of " + importedJSON.name + " Name: " + importedJSON.name +
-                            "\n Symbol: " + importedJSON.symbol+
-                            "\n Rank: " + importedJSON.rank+
-                            "\n Circulating Supply: " + importedJSON.circulating_supply+
-                            "\n Total Supply: " + importedJSON.total_supply+
-                            "\n Max Supply: " + importedJSON.max_supply+
-                            "\n Quotes: " + importedJSON.quotes+
-                            "\n Last Updated: " + importedJSON.last_updated);
+                message.channel.send("Here is the current stats of " + "***" + importedJSON.data.name + "***" + 
+                            "\n ***Name:*** " + importedJSON.data.name +
+                            "\n ***Symbol:*** " + importedJSON.data.symbol + " <:electroneum:478040522544644106>" +
+                            "\n ***Rank:*** " + importedJSON.data.rank +
+                            "\n ***Circulating Supply:*** " + importedJSON.data.circulating_supply +
+                            "\n ***Total Supply:*** " + importedJSON.data.total_supply +
+                            "\n ***Max Supply:*** " + importedJSON.data.max_supply +
+                            "\n ***Price:*** " + importedJSON.data.quotes.USD.price + " USD" +
+                            "\n ***Volume [24h]:*** " + importedJSON.data.quotes.USD.volume_24h +
+                            "\n ***Market Cap:*** " + importedJSON.data.quotes.USD.market_cap +
+                            "\n ***Percent Change [1h]:*** " + importedJSON.data.quotes.USD.percent_change_1h + "%" +
+                            "\n ***Percent Change [24h]:*** " + importedJSON.data.quotes.USD.percent_change_24h + "%" +
+                            "\n ***Percent Change [7d]:*** " + importedJSON.data.quotes.USD.percent_change_7d + "%" +
+                            "\n ***Last Updated:*** " + importedJSON.data.last_updated +
+                            "\n ```etnjwidQMcTDM5DQzRvEGreqVSvYXRLM6hknu7Gm11tASrain2VzuU68ffYZ4vwNhGeigg8svXBhefL9PZD9aCar1MHSX2DfQ4```");
   }
 })
-    //message.channel.send("Here is a random cat: ", {file: body});
-    //message.channel.send("Here is a random dog: ", {file: FileReader("https://random.dog/woof")});
   }
   
   
