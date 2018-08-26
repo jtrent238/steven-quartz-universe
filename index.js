@@ -33,11 +33,6 @@ function handleRouteError(err) {
   Raven.showReportDialog();
 };
 
-var SpotifyWebApi = require('spotify-web-api-js');
-var spotify = require('spotify');
-var spotifyApi = new SpotifyWebApi();
-spotifyApi.setAccessToken(process.env.SPOTIFYAPI);
-//var FileReader = require('filereader'), fileReader = new FileReader();
 var request = require('request');
 
 const Discord = require('discord.js');
@@ -146,11 +141,11 @@ try{
 // Create an event listener for new guild members
 client.on('guildMemberAdd', member => {
   // Send the message to a designated channel on a server:
-  const channel = member.guild.channels.find('name', 'member-log', 'bot-hell', 'bot-testing', 'jtrent238-test', 'welcome-log');
+  const channel = member.guild.channels.find('399611838490214401', 'name', 'member-log', 'bot-hell', 'bot-testing', 'jtrent238-test', 'welcome-log');
   // Do nothing if the channel wasn't found on this server
   //if (!channel) return;
   // Send the message, mentioning the member
-  channel.send(`Welcome to the server, ${member}`);
+  channel.sendMessage('Welcome to the server, ' + member);
 });
 } catch (e) {
     Raven.captureException(e);
