@@ -64,7 +64,10 @@ var Base = hookcord.Base;
 
 //var qr = require('qr-image');
 
-
+var faker = require('faker');
+var randomName = faker.name.findName(); // Rowan Nikolaus
+var randomEmail = faker.internet.email(); // Kassandra.Haley@erich.biz
+var randomCard = faker.helpers.createCard(); // random contact card containing many properties
 
 const prefix = '~';
 
@@ -548,37 +551,7 @@ client.on('message', message => {
     message.channel.sendMessage('<:patreon_logo:388799943437058059> <:patreon_logo:388799943437058059> <:patreon_logo:388799943437058059> My Patreon supporters! <:patreon_logo:388799943437058059> <:patreon_logo:388799943437058059> <:patreon_logo:388799943437058059>\n <:patreon_logo:388799943437058059> I have none! <:steven_neutral:422744915823558678>');
   }
   
-    //Spotify API Testing
-  if (message.content.startsWith(prefix + 'spotify')) {
-    spotifyApi.searchtracks
-    // get Elvis' albums, passing a callback. When a callback is passed, no Promise is returned
-    spotifyApi.getArtistAlbums('43ZHCT0cAZBISjO8DG9PnE', function(err, data) {
-      if (err) console.error(err);
-      else 
-        console.log('Artist albums', data);
-        message.channel.sendMessage('Artist albums', data);
-    });
-
-    // get Elvis' albums, using Promises through Promise, Q or when
-    spotifyApi.getArtistAlbums('43ZHCT0cAZBISjO8DG9PnE')
-      .then(function(data) {
-        message.channel.sendMessage('Artist albums', data);
-        console.log('Artist albums', data);
-      }, function(err) {
-        console.error(err);
-      });    
     
-    spotify.search({ type: 'track', query: 'dancing in the moonlight' }, function(err, data) {
-    if ( err ) {
-        console.log('Error occurred: ' + err);
-        return;
-    }
- 
-    // Do something with 'data' 
-      message.channel.sendMessage('Here is what I found: ' + data);
-    });
-  }
-  
 //Gets a player's Minecraft skin.
   //PATCH ISSUE#4 - LOOK AT MY COMMENT
       /*
@@ -652,6 +625,10 @@ client.on('message', message => {
 })
   }
   
+      //Gets a random Gem
+  if (message.content.startsWith(prefix + 'fakeinfo')) {
+    message.channel.send("Here is your FakeInfo: \n" + faker.fake("{{name.lastName}}, {{name.firstName}} {{name.suffix}}"));
+  }
   
      //NSFW - You know what this is! Right?
   //if (message.content.startsWith(prefix + 'qr' + "")) {

@@ -31,6 +31,7 @@
     "panda-facts": "^1.0.3",
     "ffmpeg": "^0.0.4",
     "discord-irc": "^2.6.1",
-    "hookcord": "^1.3.0"
+    "hookcord": "^1.3.0",
+    "faker": "^4.1.0"
   }
 }
