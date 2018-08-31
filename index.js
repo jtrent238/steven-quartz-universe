@@ -6,7 +6,13 @@ app.get("/", (request, response) => {
   //response.sendStatus(200);
   response.sendFile(__dirname + '/site/index.html');
   
+  app.use(morgan('combined'))
 });
+
+app.get('/', function (req, res) {
+  res.send('hello, world!')
+})
+
 app.listen(process.env.PORT);
 setInterval(() => {
   http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
@@ -68,6 +74,9 @@ var faker = require('faker');
 var randomName = faker.name.findName(); // Rowan Nikolaus
 var randomEmail = faker.internet.email(); // Kassandra.Haley@erich.biz
 var randomCard = faker.helpers.createCard(); // random contact card containing many properties
+
+const nodemailer = require('nodemailer');
+var morgan = require('morgan')
 
 const prefix = '~';
 
@@ -630,14 +639,46 @@ client.on('message', message => {
     message.channel.send("Here is your FakeInfo: \n" + faker.fake("{{name.lastName}}, {{name.firstName}} {{name.suffix}}"));
   }
   
-     //NSFW - You know what this is! Right?
-  //if (message.content.startsWith(prefix + 'qr' + "")) {
-  //  let site = "";
-  //  var code = qr.image('${site}', { type: 'png' });
-  //  message.channel.sendMessage('ERROR: This command is Disabled! <:steven_neutral:422744915823558678>');
-  //}
-  
-  
+        //Gets a random Gem
+  if (message.content.startsWith(prefix + 'sendmail')) {
+    // Generate test SMTP service account from ethereal.email
+// Only needed if you don't have a real mail account for testing
+nodemailer.createTestAccount((err, account) => {
+    // create reusable transporter object using the default SMTP transport
+    let transporter = nodemailer.createTransport({
+        host: 'smtp.ethereal.email',
+        port: 587,
+        secure: false, // true for 465, false for other ports
+        auth: {
+            user: account.user, // generated ethereal user
+            pass: account.pass // generated ethereal password
+        }
+    });
+
+    // setup email data with unicode symbols
+    let mailOptions = {
+        from: '"Fred Foo 👻" <foo@example.com>', // sender address
+        to: 'bar@example.com, baz@example.com', // list of receivers
+        subject: 'Hello ✔', // Subject line
+        text: 'Hello world?', // plain text body
+        html: '<b>Hello world?</b>' // html body
+    };
+
+    // send mail with defined transport object
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            return console.log(error);
+        }
+        console.log('Message sent: %s', info.messageId);
+        // Preview only available when sending through an Ethereal account
+        console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+        message.channel.send("Preview URL: \n" + nodemailer.getTestMessageUrl(info));
+        // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
+        // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
+    });
+});
+  }
+
   //In the case of an error send this message
   
   //Creates an invite

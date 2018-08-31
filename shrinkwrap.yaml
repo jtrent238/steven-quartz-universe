@@ -7,6 +7,8 @@ dependencies:
   faker: 4.1.0
   ffmpeg: 0.0.4
   hookcord: 1.3.0
+  morgan: 1.9.0
+  nodemailer: 4.6.8
   panda-facts: 1.0.3
   raven: 2.6.3
   request: 2.88.0
@@ -71,6 +73,14 @@ packages:
     dev: false
     resolution:
       integrity: sha512-ReZxvNHIOv88FlT7rxcXIIC0fPt4KZqZbOlivyWtXLt8ESx84zd3kMC6iK5jVeS2qt+g7ftS7ye4fi06X5rtRQ==
+  /basic-auth/2.0.0:
+    dependencies:
+      safe-buffer: 5.1.1
+    dev: false
+    engines:
+      node: '>= 0.8'
+    resolution:
+      integrity: sha1-AV2z81PgLlY3d1X5YnQuiYHnu7o=
   /bcrypt-pbkdf/1.0.2:
     dependencies:
       tweetnacl: 0.14.5
@@ -666,6 +676,18 @@ packages:
     dev: false
     resolution:
       integrity: sha1-3j+YVD2/lggr5IrRoMfNqDYwHc8=
+  /morgan/1.9.0:
+    dependencies:
+      basic-auth: 2.0.0
+      debug: 2.6.9
+      depd: 1.1.2
+      on-finished: 2.3.0
+      on-headers: 1.0.1
+    dev: false
+    engines:
+      node: '>= 0.8.0'
+    resolution:
+      integrity: sha1-0B+mxlhZt2/PMbPLU6OCGjEdgFE=
   /ms/2.0.0:
     dev: false
     resolution:
@@ -682,6 +704,12 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha1-KzJxhOiZIQEXeyhWP7XnECrNDKk=
+  /nodemailer/4.6.8:
+    dev: false
+    engines:
+      node: '>=6.0.0'
+    resolution:
+      integrity: sha512-A3s7EM/426OBIZbLHXq2KkgvmKbn2Xga4m4G+ZUA4IaZvG8PcZXrFh+2E4VaS2o+emhuUVRnzKN2YmpkXQ9qwA==
   /oauth-sign/0.9.0:
     dev: false
     resolution:
@@ -694,6 +722,12 @@ packages:
       node: '>= 0.8'
     resolution:
       integrity: sha1-IPEzZIGwg811M3mSoWlxqi2QaUc=
+  /on-headers/1.0.1:
+    dev: false
+    engines:
+      node: '>= 0.8'
+    resolution:
+      integrity: sha1-ko9dD0cNSTQmUepnlLCFfBAGk/c=
   /optimist/0.6.1:
     dependencies:
       minimist: 0.0.10
@@ -1073,7 +1107,7 @@ packages:
     resolution:
       integrity: sha1-Ml+T6y0OAW/0QtTjW90CbsLNopI=
 registry: 'https://registry.npmjs.org/'
-shrinkwrapMinorVersion: 8
+shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
   dblapi.js: ^2.2.0
@@ -1084,6 +1118,8 @@ specifiers:
   faker: ^4.1.0
   ffmpeg: ^0.0.4
   hookcord: ^1.3.0
+  morgan: ^1.9.0
+  nodemailer: ^4.6.8
   panda-facts: ^1.0.3
   raven: ^2.6.3
   request: ^2.88.0
