@@ -6,7 +6,13 @@ app.get("/", (request, response) => {
   //response.sendStatus(200);
   response.sendFile(__dirname + '/site/index.html');
   
+  app.use(morgan('combined'))
 });
+
+app.get('/', function (req, res) {
+  res.send('hello, world!')
+})
+
 app.listen(process.env.PORT);
 setInterval(() => {
   http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
@@ -33,11 +39,6 @@ function handleRouteError(err) {
   Raven.showReportDialog();
 };
 
-var SpotifyWebApi = require('spotify-web-api-js');
-var spotify = require('spotify');
-var spotifyApi = new SpotifyWebApi();
-spotifyApi.setAccessToken(process.env.SPOTIFYAPI);
-//var FileReader = require('filereader'), fileReader = new FileReader();
 var request = require('request');
 
 const Discord = require('discord.js');
@@ -61,7 +62,21 @@ const discord_irc_config = require('./discord_irc_config.json');
 discordIRC.discordToken = process.env.TOKEN;
 discordIRC.webhookOptions = process.env.IRC_WEBHOOK_TOKEN;
 
+var hookcord = require('hookcord');
+var Base = hookcord.Base;
+//var hook = new Base("HOOK_ID/HOOK_SECRET");
+
 //const penguinFacts = require('penguin-facts');
+
+//var qr = require('qr-image');
+
+var faker = require('faker');
+var randomName = faker.name.findName(); // Rowan Nikolaus
+var randomEmail = faker.internet.email(); // Kassandra.Haley@erich.biz
+var randomCard = faker.helpers.createCard(); // random contact card containing many properties
+
+const nodemailer = require('nodemailer');
+var morgan = require('morgan')
 
 const prefix = '~';
 
@@ -72,6 +87,8 @@ client.on('ready',() => {
   console.log(`Is client Verified?: ${client.user.verified}!`);
   console.log(`Client Created on: ${client.user.createdAt}!`);
   hook.send('I am now alive!');
+  client.user.setActivity({type: 1, name: "Steven Universe: Save the Light", url: "https://twitch.tv/jtrent238"});
+  //client.user.setActivity(`with ${client.guilds.size} Crystal Gems`);
   //game(streamingGame);
 });
 
@@ -136,11 +153,11 @@ try{
 // Create an event listener for new guild members
 client.on('guildMemberAdd', member => {
   // Send the message to a designated channel on a server:
-  const channel = member.guild.channels.find('name', 'member-log', 'bot-hell', 'bot-testing', 'jtrent238-test', 'welcome-log');
+  const channel = member.guild.channels.find('399611838490214401', 'name', 'member-log', 'bot-hell', 'bot-testing', 'jtrent238-test', 'welcome-log');
   // Do nothing if the channel wasn't found on this server
   //if (!channel) return;
   // Send the message, mentioning the member
-  channel.send(`Welcome to the server, ${member}`);
+  channel.sendMessage('Welcome to the server, ' + member);
 });
 } catch (e) {
     Raven.captureException(e);
@@ -262,8 +279,14 @@ client.on('message', message => {
     
   //Server Count
     if (message.content.startsWith(prefix + 'usercount')) {
-    message.channel.sendMessage('I have : ' + Discord.members.filter(m => m.presence.status === 'online') + ' users!');
+    message.channel.sendMessage('I have : ' + client.guilds.memberCount + ' users!');
   }
+  
+  //Guild Information
+    if (message.content.startsWith(prefix + 'guildinfo')) {
+    //message.channel.sendMessage('Here is some Info for the current Guild: ' + '\n Guild Name: ' + guild.name);
+  }
+  
   
   //Gets the bots ping
   if (message.content.startsWith(prefix + 'ping')) {
@@ -410,20 +433,55 @@ client.on('message', message => {
       */
   
      //Tells you your Location
-  if (message.content.startsWith(prefix + 'whereami')) {
+//  if (message.content.startsWith(prefix + 'whereami')) {
     //message.channel.send("Work in Progress");
 //      var catfact = require('https://catfact.ninja/fact'());
   //    console.log(catfact.fact);
-    request('https://www.googleapis.com/geolocation/v1/geolocate?key=' + process.env.GOOGLE_API_KEY, function (error, response, body) {
-  if (!error && response.statusCode == 200) {
-     var importedJSON = JSON.parse(body);
+//    request('https://www.googleapis.com/geolocation/v1/geolocate?key=' + process.env.GOOGLE_API_KEY, function (error, response, body) {
+//  if (!error && response.statusCode == 200) {
+//     var importedJSON = JSON.parse(body);
   //   console.log(catfact.fact);
-        message.channel.send("This is where your device says you are located: " + "\n latitude: " + importedJSON.lat + "\n longitude: " + importedJSON.lng + "\n accuracy: " + importedJSON.accuracy);
-  }
-})
+//        message.channel.send("This is where your device says you are located: " + "\n latitude: " + importedJSON.lat + "\n longitude: " + importedJSON.lng + "\n accuracy: " + importedJSON.accuracy);
+//  }
+//})
     //message.channel.send("Here is a random cat: ", {file: body});
     //message.channel.send("Here is a random dog: ", {file: FileReader("https://random.dog/woof")});
-  }
+//  }
+  
+     //Tells you your Information
+//  if (message.content.startsWith(prefix + 'myinfo')) {
+    //message.channel.send("Work in Progress");
+//      var catfact = require('https://catfact.ninja/fact'());
+  //    console.log(catfact.fact);
+//    request('http://gd.geobytes.com/GetCityDetails' + process.env.GOOGLE_API_KEY, function (error, response, body) {
+//  if (!error && response.statusCode == 200) {
+//     var importedJSON = JSON.parse(body);
+  //   console.log(catfact.fact);
+//        message.channel.send("This is what I found about you: " + 
+//                             "\n IP: " + importedJSON.geobytesipaddress + 
+//                             "\n RemoteIP: " + importedJSON.geobytesremoteip + 
+//                             "\n Country: " + importedJSON.geobytesregionlocationcode + 
+//                             "\n Country Code: " + importedJSON.accuracy +
+//                             "\n Region: " + importedJSON.geobytesregion +
+//                             "\n City: " + importedJSON.geobytescity +
+//                             "\n City ID: " + importedJSON.geobytescityid +
+//                             "\n fqcn: " + importedJSON.geobytesfqcn +
+//                             "\n Latitude: " + importedJSON.geobyteslatitude +
+//                             "\n Longitude: " + importedJSON.geobyteslongitude +
+//                             "\n Capital: " + importedJSON.geobytescapital +
+//                             "\n TimeZone: " + importedJSON.geobytestimezone +
+//                             "\n Nationality: " + importedJSON.geobytesnationalitysingular +
+//                             "\n Population: " + importedJSON.geobytespopulation +
+//                             "\n Conitent: " + importedJSON.geobytesmapreference +
+//                             "\n Currency: " + importedJSON.geobytescurrency +
+//                             "\n Currency Code: " + importedJSON.geobytescurrencycode +
+//                             "\n Title: " + importedJSON.geobytestitle +
+//                             "\n Location Code: " + importedJSON.geobyteslocationcode +
+//                             "\n DMA: " + importedJSON.geobytesdma +
+//                             "\n Ceratinty: " + importedJSON.geobytescertainty);
+//  }
+//})
+//  }
   
       /*
     //Flip a coin
@@ -453,10 +511,11 @@ client.on('message', message => {
     if(message.member.id == 204669722094993417) {
       console.log(`Yay, its jtrent238!`);
       message.channel.sendMessage('Bye Bye! <:steven_neutral:422744915823558678>');
-      client.logout;
-      Discord.logout;
-      client.logOut((err) => {
-        console.log(err);});
+      client.disconnect;
+      //client.logout;
+      //Discord.logout;
+      //client.disconnect((err) => {
+      //  console.log(err);});
       }
     else {
       console.log(`Nope, noppers, nadda. (NOT jtrent238)`);
@@ -501,37 +560,7 @@ client.on('message', message => {
     message.channel.sendMessage('<:patreon_logo:388799943437058059> <:patreon_logo:388799943437058059> <:patreon_logo:388799943437058059> My Patreon supporters! <:patreon_logo:388799943437058059> <:patreon_logo:388799943437058059> <:patreon_logo:388799943437058059>\n <:patreon_logo:388799943437058059> I have none! <:steven_neutral:422744915823558678>');
   }
   
-    //Spotify API Testing
-  if (message.content.startsWith(prefix + 'spotify')) {
-    spotifyApi.searchtracks
-    // get Elvis' albums, passing a callback. When a callback is passed, no Promise is returned
-    spotifyApi.getArtistAlbums('43ZHCT0cAZBISjO8DG9PnE', function(err, data) {
-      if (err) console.error(err);
-      else 
-        console.log('Artist albums', data);
-        message.channel.sendMessage('Artist albums', data);
-    });
-
-    // get Elvis' albums, using Promises through Promise, Q or when
-    spotifyApi.getArtistAlbums('43ZHCT0cAZBISjO8DG9PnE')
-      .then(function(data) {
-        message.channel.sendMessage('Artist albums', data);
-        console.log('Artist albums', data);
-      }, function(err) {
-        console.error(err);
-      });    
     
-    spotify.search({ type: 'track', query: 'dancing in the moonlight' }, function(err, data) {
-    if ( err ) {
-        console.log('Error occurred: ' + err);
-        return;
-    }
- 
-    // Do something with 'data' 
-      message.channel.sendMessage('Here is what I found: ' + data);
-    });
-  }
-  
 //Gets a player's Minecraft skin.
   //PATCH ISSUE#4 - LOOK AT MY COMMENT
       /*
@@ -562,12 +591,95 @@ client.on('message', message => {
   //Get the users avatar
   if (message.content.startsWith(prefix + 'pilot')) {
     //message.channel.send("I will try to send the vid!");
-   message.channel.send("https://www.youtube.com/watch?v=vNNkzy-JO8g");
+    message.channel.send("https://cdn.glitch.com/3b971df8-c1b8-4b3d-8b2c-749c9e197d77%2FSteven%20Universe%20-%20Pilot%20Episode%20(ENGLISH).mp4?1533949700881");
+    //message.channel.send("", {file: 'https://cdn.glitch.com/3b971df8-c1b8-4b3d-8b2c-749c9e197d77%2FSteven%20Universe%20-%20Pilot%20Episode%20(ENGLISH).mp4?1533949700881'});
+    //message.channel.send("https://www.youtube.com/watch?v=vNNkzy-JO8g"); //This video was taken down.
   }
+  
+  //Giveaway
+  const giveawayid = ["test"]
+  if (message.content.startsWith(prefix + 'giveaway' + giveawayid)) {
+    if(giveawayid == "test"){
+       message.channel.sendMessage("This is Giveaway " + giveawayid);
+       }
+
+  }
+  
+   //MUSIC BOMB
+  if (message.content.startsWith(prefix + 'musicbomb')) {
+    message.channel.sendMessage('ERROR: This command is Disabled! <:steven_neutral:422744915823558678>');
+  }
+  
+      //Sends Status of Electroneum
+  if (message.content.startsWith('etn!stats')) {
+    request('https://api.coinmarketcap.com/v2/ticker/2137/', function (error, response, body) {
+  if (!error && response.statusCode == 200) {
+     var importedJSON = JSON.parse(body);
+                message.channel.send("Here is the current stats of " + "***" + importedJSON.data.name + "***" + 
+                            "\n ***Name:*** " + importedJSON.data.name +
+                            "\n ***Symbol:*** " + importedJSON.data.symbol + " <:electroneum:478040522544644106>" +
+                            "\n ***Rank:*** " + importedJSON.data.rank +
+                            "\n ***Circulating Supply:*** " + importedJSON.data.circulating_supply +
+                            "\n ***Total Supply:*** " + importedJSON.data.total_supply +
+                            "\n ***Max Supply:*** " + importedJSON.data.max_supply +
+                            "\n ***Price:*** " + importedJSON.data.quotes.USD.price + " USD" +
+                            "\n ***Volume [24h]:*** " + importedJSON.data.quotes.USD.volume_24h +
+                            "\n ***Market Cap:*** " + importedJSON.data.quotes.USD.market_cap +
+                            "\n ***Percent Change [1h]:*** " + importedJSON.data.quotes.USD.percent_change_1h + "%" +
+                            "\n ***Percent Change [24h]:*** " + importedJSON.data.quotes.USD.percent_change_24h + "%" +
+                            "\n ***Percent Change [7d]:*** " + importedJSON.data.quotes.USD.percent_change_7d + "%" +
+                            "\n ***Last Updated:*** " + importedJSON.data.last_updated +
+                            "\n ```etnjwidQMcTDM5DQzRvEGreqVSvYXRLM6hknu7Gm11tASrain2VzuU68ffYZ4vwNhGeigg8svXBhefL9PZD9aCar1MHSX2DfQ4```");
+  }
+})
+  }
+  
+      //Gets a random Gem
+  if (message.content.startsWith(prefix + 'fakeinfo')) {
+    message.channel.send("Here is your FakeInfo: \n" + faker.fake("{{name.lastName}}, {{name.firstName}} {{name.suffix}}"));
+  }
+  
+        //Gets a random Gem
+  if (message.content.startsWith(prefix + 'sendmail')) {
+    // Generate test SMTP service account from ethereal.email
+// Only needed if you don't have a real mail account for testing
+nodemailer.createTestAccount((err, account) => {
+    // create reusable transporter object using the default SMTP transport
+    let transporter = nodemailer.createTransport({
+        host: 'smtp.ethereal.email',
+        port: 587,
+        secure: false, // true for 465, false for other ports
+        auth: {
+            user: account.user, //process.env.nodemailer_USER, // generated ethereal user
+            pass: account.pass //process.env.nodemailer_PASS // generated ethereal password
+        }
+    });
+
+    // setup email data with unicode symbols
+    let mailOptions = {
+        from: '"Fred Foo 👻" <foo@example.com>', // sender address
+        to: 'bar@example.com, baz@example.com', // list of receivers
+        subject: 'Hello ✔', // Subject line
+        text: 'Hello world?', // plain text body
+        html: '<b>Hello world?</b>' // html body
+    };
+
+    // send mail with defined transport object
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            return console.log(error);
+        }
+        console.log('Message sent: %s', info.messageId);
+        // Preview only available when sending through an Ethereal account
+        console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+        message.channel.send("Message sent: \n" + info.messageId + "\n Preview URL: \n" + nodemailer.getTestMessageUrl(info));
+        // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
+        // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
+    });
+});
+  }
+
   //In the case of an error send this message
-  //if (message.content.startsWith('')) {
-  //  message.channel.sendMessage('There seems to have been an error processing your command! <:steven_neutral:422744915823558678>');
-  //}
   
   //Creates an invite
       /*
