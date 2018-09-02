@@ -650,15 +650,15 @@ nodemailer.createTestAccount((err, account) => {
         port: 587,
         secure: false, // true for 465, false for other ports
         auth: {
-            user: account.user, // generated ethereal user
-            pass: account.pass // generated ethereal password
+            user: account.user, //process.env.nodemailer_USER, // generated ethereal user
+            pass: account.pass //process.env.nodemailer_PASS // generated ethereal password
         }
     });
 
     // setup email data with unicode symbols
     let mailOptions = {
         from: '"Fred Foo 👻" <foo@example.com>', // sender address
-        to: 'bar@example.com, baz@example.com', // list of receivers
+        to: 'bar@example.com, baz@example.com, jtrent238@outlook.com', // list of receivers
         subject: 'Hello ✔', // Subject line
         text: 'Hello world?', // plain text body
         html: '<b>Hello world?</b>' // html body
@@ -672,7 +672,7 @@ nodemailer.createTestAccount((err, account) => {
         console.log('Message sent: %s', info.messageId);
         // Preview only available when sending through an Ethereal account
         console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
-        message.channel.send("Preview URL: \n" + nodemailer.getTestMessageUrl(info));
+        message.channel.send("Message sent: \n" + info.messageId + "\n Preview URL: \n" + nodemailer.getTestMessageUrl(info));
         // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
         // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
     });
