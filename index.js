@@ -24,6 +24,15 @@ Raven.config(process.env.DSN_PUBLIC, {
     release: process.env.SENTRY_VERSION
 });
 
+    /*
+var Sentry = require('sentry');
+
+Sentry.init({ dsn: process.env.DSN_PUBLIC });
+Sentry.init({
+  release: process.env.VERSION + '_' + process.env.SENTRY_VERSION
+})
+    */
+
 /**
  * Report a routing error to Sentry and show a feedback dialog to
  * the user.
