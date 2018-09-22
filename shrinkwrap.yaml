@@ -1,5 +1,4 @@
 dependencies:
-  '@sentry/browser': 4.0.4
   dblapi.js: 2.2.0
   discord-irc: 2.6.2
   discord.js: 11.4.2
@@ -14,66 +13,6 @@ dependencies:
   raven: 2.6.4
   request: 2.88.0
 packages:
-  /@sentry/browser/4.0.4:
-    dependencies:
-      '@sentry/core': 4.0.3
-      '@sentry/types': 4.0.1
-      '@sentry/utils': 4.0.1
-      md5: 2.2.1
-    dev: false
-    engines:
-      node: '>=6'
-    resolution:
-      integrity: sha512-qlrJICz5AqB+hz9p5DKC/Fl2pRnN6Rsl+cQQCraXQXroE3C+Z50bbIWEIwns11d//NpeRTOyHDNBqzXlNiy4YQ==
-  /@sentry/core/4.0.3:
-    dependencies:
-      '@sentry/hub': 4.0.1
-      '@sentry/minimal': 4.0.1
-      '@sentry/types': 4.0.1
-      '@sentry/utils': 4.0.1
-    dev: false
-    engines:
-      node: '>=6'
-    resolution:
-      integrity: sha512-vK6Ytk88STVk8rBxXnhOpo3ujlpPfQwiAFZDo+h7qJ0Xci5QxijqOHHZGEoBKF2ZhQAsohtt77DUIvOgiGr6Xw==
-  /@sentry/hub/4.0.1:
-    dependencies:
-      '@sentry/types': 4.0.0
-      '@sentry/utils': 4.0.1
-    dev: false
-    engines:
-      node: '>=6'
-    resolution:
-      integrity: sha512-XLpVrB8MJcquZpVstv7pXq1qjWH80mX7hln2CxWfeQTT5OmUMPGz0NbcaUyPA/QisvMYNo9eeVe2+lTnmSn5+Q==
-  /@sentry/minimal/4.0.1:
-    dependencies:
-      '@sentry/hub': 4.0.1
-      '@sentry/types': 4.0.0
-    dev: false
-    engines:
-      node: '>=6'
-    resolution:
-      integrity: sha512-KKrgVATezmf/Wt1c0yH8csRwvV4s6TFGY1R3lgBwql3pKl3YYfL7RMqBke5elG9/3zWl6W4G9cleKZGAPLSvTA==
-  /@sentry/types/4.0.0:
-    dev: false
-    engines:
-      node: '>=6'
-    resolution:
-      integrity: sha512-UaGfdu9DTcdQjyZ7nSQXAX4Nz1EzwDY6lFMfWxvb3hq7qDvr3bg0LOSFyjELbS6RcAkXwjB8BLpicABAXao3ag==
-  /@sentry/types/4.0.1:
-    dev: false
-    engines:
-      node: '>=6'
-    resolution:
-      integrity: sha512-1Cq2gk/wZuBHB//HO830nykysHEsvZpjFcoIBHyqsJ7GjjcMxRAnO8ix0aw3hRfOsiPgD3mp8QomY9DqRHbjjA==
-  /@sentry/utils/4.0.1:
-    dependencies:
-      '@sentry/types': 4.0.0
-    dev: false
-    engines:
-      node: '>=6'
-    resolution:
-      integrity: sha512-SYbE1oe94TPnzcMlGZyCgIfo8e0NpkDo8sX1w43yHcE4HUbJ0NpK8z2FF4h52hShaog4ceLIXXSiYIKoKaJa2A==
   /accepts/1.3.5:
     dependencies:
       mime-types: 2.1.19
@@ -1281,7 +1220,6 @@ registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
-  '@sentry/browser': ^4.0.3
   dblapi.js: ^2.2.0
   discord-irc: ^2.6.2
   discord.js: ^11.4.2
