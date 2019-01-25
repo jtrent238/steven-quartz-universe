@@ -539,6 +539,7 @@ try {
             message.channel.sendMessage(';;bump');
             message.channel.sendMessage('dlm!bump');
             message.channel.sendMessage('dc!bump');
+            message.channel.sendMessage('!disboard bump');
         }
 
         //Shutdown the bot (jtrent238 ONLY Command!)
