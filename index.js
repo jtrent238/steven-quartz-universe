@@ -318,7 +318,21 @@ try {
 
         //Gets the bots uptime in Milliseconds
         if (message.content.startsWith(prefix + 'uptime')) {
-            message.channel.sendMessage('I have been online for: ' + client.uptime + ' Milliseconds');
+          var uptimeMilliseconds = client.uptime;
+          var uptimeSeconds = uptimeMilliseconds * 0.001;
+          var uptimeMinutes = uptimeSeconds / 60;
+          var uptimeHours = uptimeMinutes / 60;
+          var uptimeDays = uptimeHours / 24;
+          var uptimeWeeks = uptimeDays / 7;
+          
+            message.channel.sendMessage('I have been online for: ' + uptimeMilliseconds + ' Milliseconds' + '\n' +
+                                        '------------------------------------------' + '\n' +
+                                        '  That is '+ '\n' + 
+                                          '  ' + uptimeSeconds + ' Seconds!' + '\n' +
+                                          '  ' + uptimeMinutes + ' Minutes!' + '\n' +
+                                          '  ' + uptimeHours + ' Hours!' + '\n' +
+                                          '  ' + uptimeDays + ' Days!' + '\n' +
+                                          '  ' + uptimeWeeks + ' Weeks!' + '\n');
         }
 
         //Get a random quote
