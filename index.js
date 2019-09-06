@@ -705,7 +705,7 @@ try {
         }
 
         //Gets a random Gem
-        if (message.content.startsWith(prefix + 'fakema,e')) {
+        if (message.content.startsWith(prefix + 'fakename')) {
             message.channel.send("Here is your Fake Name: \n" + faker.fake("{{name.lastName}}, {{name.firstName}} {{name.suffix}}"));
         }
 
