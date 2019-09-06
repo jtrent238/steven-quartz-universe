@@ -111,6 +111,20 @@ client.on('ready', () => {
     //game(streamingGame);
 });
 
+////////////////////////PATCH ISSUE #13
+
+client.on("error", (err) => {
+	console.log("Error: " + err)
+});
+process.on('unhandledRejection', function (err,p) {
+    console.log(err,p)
+})
+process.on('warning', (warning) => {
+    console.warn(warning.name);    // Print the warning name
+    console.warn(warning.message); // Print the warning message
+    console.warn(warning.stack);   // Print the stack trace
+});
+///////////////////////////////////////
 
 var streamingGame = {
     type: 1,
@@ -540,12 +554,15 @@ try {
       */
 
         //Create Invite
-        /*
+        
         if (message.content.startsWith(prefix + 'createinvite')) {
-          client.createinvite(client.channel, 0, 0, true, true)
-          message.channel.send('Invite Created: ' + invite);
+          client.createinvite().then(invite => 
+                                     console.log(`Created an invite with a code of ${invite.code}`),
+                                     message.channel.send('Invite Created: ${invite.code}')
+                                    ).catch(console.error);
+          //message.channel.send('Invite Created: ' + client.createinvite(client.channel, 0, 0, true, true));
         }
-        */
+        
 
         //Bump the other bots (Specicaly for jtrent238 server)
         if (message.content.startsWith(prefix + 'bump')) {
