@@ -554,6 +554,8 @@ try {
             message.channel.sendMessage('dlm!bump');
             message.channel.sendMessage('dc!bump');
             message.channel.sendMessage('!disboard bump');
+            message.channel.sendMessage('~bump');
+            message.channel.sendMessage('.bump');
         }
 
         //Shutdown the bot (jtrent238 ONLY Command!)
@@ -686,8 +688,8 @@ try {
         }
 
         //Gets a random Gem
-        if (message.content.startsWith(prefix + 'fakeinfo')) {
-            message.channel.send("Here is your FakeInfo: \n" + faker.fake("{{name.lastName}}, {{name.firstName}} {{name.suffix}}"));
+        if (message.content.startsWith(prefix + 'fakema,e')) {
+            message.channel.send("Here is your Fake Name: \n" + faker.fake("{{name.lastName}}, {{name.firstName}} {{name.suffix}}"));
         }
 
         //Gets a random Gem
