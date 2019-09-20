@@ -488,6 +488,8 @@ try {
             message.channel.send("Did you know? " + pandaFacts.random());
         }
 
+        
+      
         //Sends a random penguin fact
         /*
   if (message.content.startsWith(prefix + 'penguinfact')) {
