@@ -33,7 +33,7 @@
     "discord-irc": "^2.7.2",
     "hookcord": "^2.0.2",
     "faker": "^4.1.0",
-    "nodemailer": "^6.3.0",
+    "nodemailer": "^6.3.1",
     "morgan": "^1.9.1",
     "random-joke-getter": "^2.0.1"
   }
