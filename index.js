@@ -3,8 +3,8 @@ const express = require('express');
 const app = express();
 app.get("/", (request, response) => {
     console.log(Date.now() + " Ping Received");
-    //response.sendStatus(200);
-    response.sendFile(__dirname + '/site/index.html');
+    response.sendStatus(200);
+    //response.sendFile(__dirname + '/site/index.html');
 
     app.use(morgan('combined'))
 });
