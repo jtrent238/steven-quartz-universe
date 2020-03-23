@@ -658,7 +658,7 @@ try {
         if (message.content.startsWith(prefix + 'watch.s6e1')) {
           message.channel.sendMessage('You can watch "Little Homeschool" here: ' + watchLink_s6e1);
         }
-        if (message.content.startsWith(prefix + 'watch.s6e1')) {
+        if (message.content.startsWith(prefix + 'watch.s6e2')) {
           message.channel.sendMessage('You can watch "Guidance" here: ' + watchLink_s6e2);
         }
         if (message.content.startsWith(prefix + 'watch.s6e3')) {
