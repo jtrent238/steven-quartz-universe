@@ -632,7 +632,94 @@ try {
             message.channel.sendMessage('<:patreon_logo:388799943437058059> <:patreon_logo:388799943437058059> <:patreon_logo:388799943437058059> My Patreon supporters! <:patreon_logo:388799943437058059> <:patreon_logo:388799943437058059> <:patreon_logo:388799943437058059>\n <:patreon_logo:388799943437058059> I have none! <:steven_neutral:422744915823558678>');
         }
 
+      var watchLink_s6e1 = 'https://www.warpdrives.xyz/video/6x1.mp4';
+      var watchLink_s6e2 = 'https://www.warpdrives.xyz/video/6x2.mp4';
+      var watchLink_s6e3 = 'https://www.warpdrives.xyz/video/6x3.mp4';
+      var watchLink_s6e4 = 'https://www.warpdrives.xyz/video/6x4.mp4';
+      var watchLink_s6e5 = 'https://www.warpdrives.xyz/video/6x5.mp4';
+      var watchLink_s6e6 = 'https://www.warpdrives.xyz/video/6x6.mp4';
+      var watchLink_s6e7 = 'https://www.warpdrives.xyz/video/6x7.mp4';
+      var watchLink_s6e8 = 'https://www.warpdrives.xyz/video/6x8.mp4';
+      var watchLink_s6e9 = 'https://www.warpdrives.xyz/video/6x9.mp4';
+      var watchLink_s6e10 = 'https://www.warpdrives.xyz/video/6x10.mp4';
+      var watchLink_s6e11 = 'https://www.warpdrives.xyz/video/6x11.mp4';
+      var watchLink_s6e12 = 'https://www.warpdrives.xyz/video/6x12.mp4';
+      var watchLink_s6e13 = 'https://www.warpdrives.xyz/video/6x13.mp4';
+      var watchLink_s6e14 = 'https://www.warpdrives.xyz/video/6x14.mp4';
+      var watchLink_s6e15 = 'https://www.warpdrives.xyz/video/6x15.mp4';
+      var watchLink_s6e16 = 'https://www.warpdrives.xyz/video/6x16.mp4';
+      var watchLink_s6e17 = 'https://www.warpdrives.xyz/video/6x17.mp4';
+      var watchLink_s6e18 = 'https://www.warpdrives.xyz/video/6x18.mp4';
+      var watchLink_s6e19 = 'https://www.warpdrives.xyz/video/6x19.mp4';
+      var watchLink_s6e20 = 'https://www.warpdrives.xyz/video/6x20.mp4';
 
+      
+	  //Watch Episode commands
+        if (message.content.startsWith(prefix + 'watch.s6e1')) {
+          message.channel.sendMessage('You can watch "Little Homeschool" here: ' + watchLink_s6e1);
+        }
+        if (message.content.startsWith(prefix + 'watch.s6e1')) {
+          message.channel.sendMessage('You can watch "Guidance" here: ' + watchLink_s6e2);
+        }
+        if (message.content.startsWith(prefix + 'watch.s6e3')) {
+          message.channel.sendMessage('You can watch "Rose Buds" here: ' + watchLink_s6e3);
+        }
+        if (message.content.startsWith(prefix + 'watch.s6e4')) {
+          message.channel.sendMessage('You can watch "Volleyball" here: ' + watchLink_s6e4);
+        }
+        if (message.content.startsWith(prefix + 'watch.s6e5')) {
+          message.channel.sendMessage('You can watch "Bluebird" here: ' + watchLink_s6e5);
+        }
+        if (message.content.startsWith(prefix + 'watch.s6e6')) {
+          message.channel.sendMessage('You can watch "A Very Special Episode" here: ' + watchLink_s6e6);
+        }
+        if (message.content.startsWith(prefix + 'watch.s6e7')) {
+          message.channel.sendMessage('You can watch "Snow Day" here: ' + watchLink_s6e7);
+        }
+        if (message.content.startsWith(prefix + 'watch.s6e8')) {
+          message.channel.sendMessage('You can watch "Why So Blue?" here: ' + watchLink_s6e8);
+        }
+        if (message.content.startsWith(prefix + 'watch.s6e9')) {
+          message.channel.sendMessage('You can watch "Little Graduation" here: ' + watchLink_s6e9);
+        }
+        if (message.content.startsWith(prefix + 'watch.s6e10')) {
+          message.channel.sendMessage('You can watch "Prickly Pair" here: ' + watchLink_s6e10);
+        }
+        if (message.content.startsWith(prefix + 'watch.s6e5')) {
+          message.channel.sendMessage('You can watch "In Dreams" here: ' + watchLink_s6e11);
+        }
+        if (message.content.startsWith(prefix + 'watch.s6e12')) {
+          message.channel.sendMessage('You can watch "Bismuth Casual" here: ' + watchLink_s6e12);
+        }
+        if (message.content.startsWith(prefix + 'watch.s6e13')) {
+          message.channel.sendMessage('You can watch "Together Forever" here: ' + watchLink_s6e13);
+        }
+        if (message.content.startsWith(prefix + 'watch.s6e14')) {
+          message.channel.sendMessage('You can watch "Growing Pains" here: ' + watchLink_s6e13);
+        }
+        if (message.content.startsWith(prefix + 'watch.s6e14')) {
+          message.channel.sendMessage('You can watch "Mr. Universe" here: ' + watchLink_s6e14);
+        }
+        if (message.content.startsWith(prefix + 'watch.s6e15')) {
+          message.channel.sendMessage('You can watch "Fragments" here: ' + watchLink_s6e15);
+        }
+        if (message.content.startsWith(prefix + 'watch.s6e16')) {
+          message.channel.sendMessage('You can watch "Homeworld Bound" here: ' + watchLink_s6e16);
+        }
+        if (message.content.startsWith(prefix + 'watch.s6e17')) {
+          message.channel.sendMessage('You can watch "Everythings Fine" here: ' + watchLink_s6e17);
+        }
+        if (message.content.startsWith(prefix + 'watch.s6e18')) {
+          message.channel.sendMessage('You can watch "I Am My Monster" here: ' + watchLink_s6e18);
+        }
+        if (message.content.startsWith(prefix + 'watch.s6e19')) {
+          message.channel.sendMessage('You can watch "The Future" here: ' + watchLink_s6e19);
+        }
+        if (message.content.startsWith(prefix + 'watch.s6e20')) {
+          message.channel.sendMessage('You can watch s6e20 here: ' + watchLink_s6e20);
+        }
+
+      
         //Gets a player's Minecraft skin.
         //PATCH ISSUE#4 - LOOK AT MY COMMENT
         /*
