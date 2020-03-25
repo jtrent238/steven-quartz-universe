@@ -36,6 +36,7 @@ The prefix for the bot is `~`
 - `pandafact` = Gets a random panda fact. :panda:
 - `penguinfact` = Gets a random penguin fact. :penguin: 
 - `myavatar` = Gets a image of your avatar.
+- `watch.sXeX` = Watch episode. (Replace X with Season/Episode number)
 
 ### Developer Commands
 

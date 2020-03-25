@@ -244,6 +244,7 @@ try {
                 '<:gem_rose:422744912182902785> `pandafact` = Gets a random panda fact. :panda: \n' +
                 '<:gem_rose:422744912182902785> `penguinfact` = Gets a random penguin fact. :penguin: \n' +
                 '<:gem_rose:422744912182902785> `myavatar` = Gets a image of your avatar. \n' +
+                '<:gem_rose:422744912182902785> `watch.sXeX` = Watch episode. (Replace X with Season/Episode number) \n' +
                 '<:gem_rose:422744912182902785> <:gem_rose:422744912182902785> <:gem_rose:422744912182902785> <:gem_rose:422744912182902785> <:gem_rose:422744912182902785> <:gem_rose:422744912182902785> <:gem_rose:422744912182902785> <:gem_rose:422744912182902785> <:gem_rose:422744912182902785> <:gem_rose:422744912182902785> <:gem_rose:422744912182902785> <:gem_rose:422744912182902785> <:gem_rose:422744912182902785> <:gem_rose:422744912182902785> <:gem_rose:422744912182902785>');
 
         }
