@@ -688,7 +688,7 @@ try {
         if (message.content.startsWith(prefix + 'watch.s6e10')) {
           message.channel.sendMessage('You can watch "Prickly Pair" here: ' + watchLink_s6e10);
         }
-        if (message.content.startsWith(prefix + 'watch.s6e5')) {
+        if (message.content.startsWith(prefix + 'watch.s6e11')) {
           message.channel.sendMessage('You can watch "In Dreams" here: ' + watchLink_s6e11);
         }
         if (message.content.startsWith(prefix + 'watch.s6e12')) {
@@ -700,26 +700,23 @@ try {
         if (message.content.startsWith(prefix + 'watch.s6e14')) {
           message.channel.sendMessage('You can watch "Growing Pains" here: ' + watchLink_s6e13);
         }
-        if (message.content.startsWith(prefix + 'watch.s6e14')) {
-          message.channel.sendMessage('You can watch "Mr. Universe" here: ' + watchLink_s6e14);
-        }
         if (message.content.startsWith(prefix + 'watch.s6e15')) {
-          message.channel.sendMessage('You can watch "Fragments" here: ' + watchLink_s6e15);
+          message.channel.sendMessage('You can watch "Mr. Universe" here: ' + watchLink_s6e15);
         }
         if (message.content.startsWith(prefix + 'watch.s6e16')) {
-          message.channel.sendMessage('You can watch "Homeworld Bound" here: ' + watchLink_s6e16);
+          message.channel.sendMessage('You can watch "Fragments" here: ' + watchLink_s6e16);
         }
         if (message.content.startsWith(prefix + 'watch.s6e17')) {
-          message.channel.sendMessage('You can watch "Everythings Fine" here: ' + watchLink_s6e17);
+          message.channel.sendMessage('You can watch "Homeworld Bound" here: ' + watchLink_s6e17);
         }
         if (message.content.startsWith(prefix + 'watch.s6e18')) {
-          message.channel.sendMessage('You can watch "I Am My Monster" here: ' + watchLink_s6e18);
+          message.channel.sendMessage('You can watch "Everythings Fine" here: ' + watchLink_s6e18);
         }
         if (message.content.startsWith(prefix + 'watch.s6e19')) {
-          message.channel.sendMessage('You can watch "The Future" here: ' + watchLink_s6e19);
+          message.channel.sendMessage('You can watch "I Am My Monster" here: ' + watchLink_s6e19);
         }
         if (message.content.startsWith(prefix + 'watch.s6e20')) {
-          message.channel.sendMessage('You can watch s6e20 here: ' + watchLink_s6e20);
+          message.channel.sendMessage('You can watch "The Future" here: ' + watchLink_s6e20);
         }
 
       
