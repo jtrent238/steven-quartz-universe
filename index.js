@@ -6,6 +6,8 @@ const express = require('express');
 const app = express();
 
 //const settings = require('./settings.json');
+//require("http").createServer(async (req,res) => { res.statusCode = 200; res.write("ok"); res.end(); }).listen(3000, () => console.log("Now listening on port 3000"));
+
 
 app.get("/", (request, response) => {
   console.log(Date.now() + " Ping Received");
