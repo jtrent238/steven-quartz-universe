@@ -181,14 +181,7 @@ try {
 } catch (e) {
     Raven.captureException(e);
 }
-try {
-    // Create an event listener for new channels
-    client.on('channelCreate', message => {
-        message.channel.sendMessage('I see a new channel has been created! <:gem_rose:422744912182902785>');
-    });
-} catch (e) {
-    Raven.captureException(e);
-}
+
 try {
 
     // Create an event listener for new guild members
