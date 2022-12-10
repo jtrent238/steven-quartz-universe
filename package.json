@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/jtrent238/steven-quartz-universe#readme",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "raven": "^2.6.4",
     "request": "^2.88.2",
     "discord.js": "^11.5.1",
